@@ -146,6 +146,25 @@ void dump_task(const TaskProxy &task_proxy) {
     for (OperatorProxy op : operators) {
         min_action_cost = min(min_action_cost, op.get_cost());
         max_action_cost = max(max_action_cost, op.get_cost());
+        utils::g_log << "Operator " << op.get_name() << endl;
+        utils::g_log << "  Preconditions:" << endl;
+        for (FactProxy pre : op.get_preconditions()) {
+            utils::g_log << "    " << pre.get_name() << endl;
+        }
+        utils::g_log << "  Effects:" << endl;
+        for (EffectProxy eff : op.get_effects()) {
+            if (!eff.get_conditions().empty()) {
+                utils::g_log << "    IF" << endl;
+                for (FactProxy pre : eff.get_conditions()) {
+                    utils::g_log << "      " << pre.get_name() << endl;
+                }
+                utils::g_log << "    THEN " <<  eff.get_fact().get_name() << endl;
+            } else {
+                utils::g_log << "    " << eff.get_fact().get_name() << endl;
+            }
+        }
+        utils::g_log << "  Costs: " << op.get_cost() << endl;
+
     }
     utils::g_log << "Min action cost: " << min_action_cost << endl;
     utils::g_log << "Max action cost: " << max_action_cost << endl;
