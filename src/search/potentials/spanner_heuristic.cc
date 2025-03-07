@@ -9,8 +9,12 @@
 using namespace std;
 
 namespace potentials{
-static unique_ptr<PotentialFunction> create_spanner_potential_function(const TaskProxy &task){
-    vector<vector<double>> fact_potentials;
+static unique_ptr<PotentialFunction> create_spanner_potential_function(const TaskProxy &task_proxy){
+    VariablesProxy variables = task_proxy.get_variables();
+    vector<vector<double>> fact_potentials(variables.size());
+    for (VariableProxy var : variables) {
+        fact_potentials[var.get_id()].resize(var.get_domain_size());
+    }
     // fill fact_potentials with values
     return make_unique<PotentialFunction>(fact_potentials);
 }
