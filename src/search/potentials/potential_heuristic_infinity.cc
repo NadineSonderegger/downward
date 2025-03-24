@@ -7,8 +7,8 @@
 using namespace std;
 
 namespace potentials {
-PotentialHeuristic::PotentialHeuristic(
-    unique_ptr<PotentialFunction> function,
+PotentialHeuristicInfinity::PotentialHeuristic(
+    unique_ptr<PotentialFunctionFeatures> function,
     const shared_ptr<AbstractTask> &transform, bool cache_estimates,
     const string &description, utils::Verbosity verbosity)
     : Heuristic(transform, cache_estimates, description, verbosity),
@@ -22,5 +22,3 @@ int PotentialHeuristic::compute_heuristic(const State &ancestor_state) {
 }
 }
 
-
- // copy twice

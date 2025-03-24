@@ -1,4 +1,4 @@
-#include "potential_function.h"
+#include "potential_function_features.h"
 #include "potential_heuristic.h"
 #include "potential_optimizer.h"
 #include "util.h"
@@ -9,14 +9,13 @@
 using namespace std;
 
 namespace potentials{
-static unique_ptr<PotentialFunction> create_spanner_potential_function(const TaskProxy &task_proxy){
+static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(const TaskProxy &task_proxy){
     VariablesProxy variables = task_proxy.get_variables();
-    vector<vector<double>> fact_potentials(variables.size());
+
     for (VariableProxy var : variables) {
-        fact_potentials[var.get_id()].resize(var.get_domain_size());
     }
     // fill fact_potentials with values
-    return make_unique<PotentialFunction>(fact_potentials);
+    return make_unique<PotentialFunctionFeatures>(feature_potentials);
 }
 class SpannerHeuristicFeature
     : public plugins::TypedFeature<Evaluator, PotentialHeuristic> {

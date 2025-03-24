@@ -28,8 +28,8 @@ int main(int argc, const char **argv) {
             utils::g_log << "done reading input!" << endl;
             TaskProxy task_proxy(*tasks::g_root_task);
             unit_cost = task_properties::is_unit_cost(task_proxy);
-            task_properties::dump_task(task_proxy);
-             //exit(0);
+            /*task_properties::dump_task(task_proxy);
+            exit(0); */
 
         }
 
