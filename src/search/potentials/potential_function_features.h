@@ -2,7 +2,7 @@
 #define POTENTIALS_POTENTIAL_FUNCTION_H
 
 #include <vector>
-#include <unordered_map>
+#include "../utils/hash.h"
 
 class State;
 
@@ -14,11 +14,11 @@ namespace potentials {
   overhead that is induced by evaluating heuristics whenever possible.
 */
 class PotentialFunctionFeatures {
-    const std::unordered_map<std::vector<std::pair<int, int>>, int> feature_potentials;
+    const utils::HashMap<std::vector<std::pair<int, int>>, int> feature_potentials;
 
 public:
     explicit PotentialFunctionFeatures(
-        const std::unordered_map<std::vector<std::pair<int, int>>, int> &fact_potentials);
+        utils::HashMap<std::vector<std::pair<int, int>>, int> &&fact_potentials);
     ~PotentialFunctionFeatures() = default;
 
     int get_value(const State &state) const;

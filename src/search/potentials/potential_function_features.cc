@@ -3,35 +3,39 @@
 #include "../task_proxy.h"
 
 #include "../utils/collections.h"
+#include "../utils/hash.h"
 
 #include <cmath>
+#include <limits>
 
 using namespace std;
 
 namespace potentials {
     PotentialFunctionFeatures::PotentialFunctionFeatures(
-    const unordered_map<vector<pair<int, int>>, int> &feature_potentials)
-    : feature_potentials(feature_potentials) {
-}
-
-void generate_subsets(const vector<pair<int, int>> &features, vector<vector<pair<int, int>>> &subsets) {
-    int n = features.size();
-    for (int i = 1; i < (1 << n); ++i) {
-        vector<pair<int, int>> subset;
-        for (int j = 0; j < n; ++j) {
-            if (i & (1 << j)) {
-                subset.push_back(features[j]);
-            }
-        }
-        subsets.push_back(subset);
-    }
+    utils::HashMap<vector<pair<int, int>>, int> &&feature_potentials)
+    : feature_potentials(move(feature_potentials)) {
 }
 
 int PotentialFunctionFeatures::get_value(const State &state) const {
     int heuristic_value = 0.0;
-    for (FactProxy fact : state) {
-        int var_id = fact.get_variable().get_id();
-        int value = fact.get_value();
+
+
+    for (const auto &feature : feature_potentials) {
+        const vector<pair<int, int>> &feature_set = feature.first;
+        bool all_in_state = true;
+
+        for (const auto &atom : feature_set) {
+            int var = atom.first;
+            int value = atom.second;
+            if ( state[var].get_value() != value) { // could use state_features.count(atom) == 0 instead
+                all_in_state = false;
+                break;
+            }
+        }
+        
+        if (all_in_state) {
+            heuristic_value += feature.second;
+        }
     }
     return heuristic_value;
 }
