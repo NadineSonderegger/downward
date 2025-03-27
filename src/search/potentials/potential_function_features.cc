@@ -27,19 +27,21 @@ int PotentialFunctionFeatures::get_value(const State &state) const {
         for (const auto &atom : feature_set) {
             int var = atom.first;
             int value = atom.second;
-            if ( state[var].get_value() != value) { // could use state_features.count(atom) == 0 instead
+            if ( state[var].get_value() != value) {
                 all_in_state = false;
                 break;
             }
         }
         
         if (all_in_state) {
+            if (feature.second == std::numeric_limits<int>::max())
+            {
+                return std::numeric_limits<int>::max();
+            }
+            
             heuristic_value += feature.second;
         }
     }
     return heuristic_value;
 }
 }
-
-// unordered map
-// copy once
