@@ -43,7 +43,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                         }
                     }
                 } 
-                else if (regex_search(fact_name, match, regex(R"(spanner\d+)"))) { // spanner at location 
+                else if (regex_search(fact_name, match, regex(R"(at\(spanner\d+, location\d+\))"))) { // spanner at location 
                     feature_potentials[{{var_id, value}}] = 1;
                 }
                 else if (regex_search(fact_name, match, regex(R"(loose\(nut(\d+)\))"))) { // loose nut
