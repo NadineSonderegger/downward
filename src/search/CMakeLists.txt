@@ -430,6 +430,19 @@ create_fast_downward_library(
     DEPENDENCY_ONLY
 )
 
+# thesis:
+
+create_fast_downward_library(
+    NAME all_states
+    HELP "All states"
+    SOURCES
+        search_algorithms/all_states
+    DEPENDS
+        ordered_set
+        successor_generator
+    #DEPENDENCY_ONLY
+)
+
 create_fast_downward_library(
     NAME eager_search
     HELP "Eager search"
