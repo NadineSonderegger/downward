@@ -4,7 +4,6 @@
 #include "util.h"
 
 #include "../plugins/plugin.h"
-#include "../utils/system.h"
 #include "../utils/hash.h"
 
 #include <regex>
@@ -23,6 +22,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
             string fact_name = var.get_fact(value).get_name();
 
             smatch match;
+
             if (regex_search(fact_name, match, regex(R"(at\(agent, location(\d+)\))"))) { // agent at location i
 
                 int agent_location = stoi(match[1].str());  

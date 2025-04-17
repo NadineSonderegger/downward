@@ -193,6 +193,12 @@ ostream &operator<<(ostream &stream, const vector<T> &vec) {
     stream << "]";
     return stream;
 }
+
+template<class T1, class T2>
+ostream &operator<<(ostream &stream, const pair<T1,T2> &pair) {
+    stream << "<" << pair.first << ", " << pair.second << ">";
+    return stream;
+}
 }
 
 #endif

@@ -12,7 +12,7 @@ PotentialHeuristicInfinity::PotentialHeuristicInfinity(
     unique_ptr<PotentialFunctionFeatures> function,
     const shared_ptr<AbstractTask> &transform, bool cache_estimates,
     const string &description, utils::Verbosity verbosity)
-    : Heuristic(transform, cache_estimates, description, verbosity),
+    : Heuristic(transform, false, description, verbosity),
       function(move(function)) {
 }
 

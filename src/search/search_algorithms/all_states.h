@@ -17,46 +17,25 @@ class Feature;
 
 namespace all_states {
 class AllStates : public SearchAlgorithm {
-    const bool reopen_closed_nodes;
+    std::shared_ptr<Evaluator> h_evaluator;
 
-    std::unique_ptr<StateOpenList> open_list;
-    std::shared_ptr<Evaluator> f_evaluator;
+    void generate_states(int index,
+        const std::vector<VariableProxy> &variables,
+        std::vector<int> &current,
+        const std::function<bool(const std::vector<int> &)> &callback,
+        bool &stop_flag);
 
-    std::vector<Evaluator *> path_dependent_evaluators;
-    std::vector<std::shared_ptr<Evaluator>> preferred_operator_evaluators;
-    std::shared_ptr<Evaluator> lazy_evaluator;
-
-    std::shared_ptr<PruningMethod> pruning_method;
-
-    void start_f_value_statistics(EvaluationContext &eval_context);
-    void update_f_value_statistics(EvaluationContext &eval_context);
-    void reward_progress();
+    bool is_goal_state(const State &s, const GoalsProxy &goals);
 
 protected:
-    virtual void initialize() override;
     virtual SearchStatus step() override;
 
 public:
     explicit AllStates(
-        const std::shared_ptr<OpenListFactory> &open,
-        bool reopen_closed, const std::shared_ptr<Evaluator> &f_eval,
-        const std::vector<std::shared_ptr<Evaluator>> &preferred,
-        const std::shared_ptr<PruningMethod> &pruning,
-        const std::shared_ptr<Evaluator> &lazy_evaluator,
-        OperatorCost cost_type, int bound, double max_time,
-        const std::string &description, utils::Verbosity verbosity);
+        const std::shared_ptr<Evaluator> &h_eval);
+    virtual void print_statistics() const{};
+    };
 
-    virtual void print_statistics() const override;
-
-    void dump_search_space() const;
-};
-
-extern void add_all_states_options_to_feature(
-    plugins::Feature &feature, const std::string &description);
-extern std::tuple<std::shared_ptr<PruningMethod>,
-                  std::shared_ptr<Evaluator>, OperatorCost, int, double,
-                  std::string, utils::Verbosity>
-get_all_states_arguments_from_options(const plugins::Options &opts);
 }
 
 #endif
