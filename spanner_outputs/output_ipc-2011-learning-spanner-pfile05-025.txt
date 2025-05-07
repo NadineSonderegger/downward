@@ -1,0 +1,1043 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/ipc-11/spanner/learning-phase/domain.pddl downward-benchmarks/ipc-11/spanner/learning-phase/ipc-2011-learning-spanner-pfile05-025.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.010s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.005s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.010s wall-clock]
+Generated 20 rules.
+Computing model... [0.260s CPU, 0.267s wall-clock]
+22255 relevant atoms
+21971 auxiliary atoms
+44226 final queue length
+63686 total queue pushes
+Completing instantiation... [0.980s CPU, 1.007s wall-clock]
+Instantiating: [1.260s CPU, 1.308s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.010s CPU, 0.007s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.006s wall-clock]
+Instantiating groups... [0.240s CPU, 0.252s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+280 uncovered facts
+Choosing groups: [0.010s CPU, 0.003s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.270s CPU, 0.277s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.040s CPU, 0.043s wall-clock]
+Translating task: [1.500s CPU, 1.553s wall-clock]
+19600 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+561 propositions removed
+Detecting unreachable propositions: [0.770s CPU, 0.800s wall-clock]
+Reordering and filtering variables...
+421 of 421 variables necessary.
+0 of 282 mutex groups necessary.
+19831 of 19831 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.360s CPU, 0.378s wall-clock]
+Translator variables: 421
+Translator derived variables: 0
+Translator facts: 932
+Translator goal facts: 140
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 19831
+Translator axioms: 0
+Translator task size: 139526
+Translator peak memory: 119636 KB
+Writing output... [0.260s CPU, 0.268s wall-clock]
+Done! [4.480s CPU, 4.646s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/nadso/thesis/downward/builds/release/bin/downward --search 'eager_greedy([spanner_heuristic()])' --internal-plan-file sas_plan < output.sas
+[t=0.000145s, 10860 KB] reading input...
+[t=0.150779s, 16804 KB] done reading input!
+[t=6.006402s, 17200 KB] Building successor generator...done!
+[t=6.031534s, 20064 KB] peak memory difference for successor generator creation: 2864 KB
+[t=6.031620s, 20064 KB] time for successor generation creation: 0.024172s
+[t=6.032158s, 20064 KB] Variables: 421
+[t=6.032245s, 20064 KB] FactPairs: 932
+[t=6.032306s, 20064 KB] Bytes per state: 56
+[t=6.032409s, 20064 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+[t=6.032532s, 20064 KB] New best heuristic value for spanner heuristic: 280
+[t=6.032598s, 20064 KB] g=0, 1 evaluated, 0 expanded
+[t=6.032666s, 20064 KB] Initial heuristic value for spanner heuristic: 280
+[t=6.032728s, 20064 KB] pruning method: none
+[t=6.032864s, 20064 KB] New best heuristic value for spanner heuristic: 279
+[t=6.032957s, 20064 KB] g=2, 4 evaluated, 2 expanded
+[t=6.033077s, 20064 KB] New best heuristic value for spanner heuristic: 278
+[t=6.033142s, 20064 KB] g=3, 7 evaluated, 3 expanded
+[t=6.033263s, 20064 KB] New best heuristic value for spanner heuristic: 277
+[t=6.033327s, 20064 KB] g=5, 10 evaluated, 5 expanded
+[t=6.033438s, 20064 KB] New best heuristic value for spanner heuristic: 276
+[t=6.033502s, 20064 KB] g=6, 13 evaluated, 6 expanded
+[t=6.033616s, 20064 KB] New best heuristic value for spanner heuristic: 275
+[t=6.033752s, 20064 KB] g=8, 16 evaluated, 8 expanded
+[t=6.033956s, 20064 KB] New best heuristic value for spanner heuristic: 274
+[t=6.034043s, 20064 KB] g=9, 19 evaluated, 9 expanded
+[t=6.034164s, 20064 KB] New best heuristic value for spanner heuristic: 273
+[t=6.034229s, 20064 KB] g=11, 22 evaluated, 11 expanded
+[t=6.034352s, 20064 KB] New best heuristic value for spanner heuristic: 272
+[t=6.034416s, 20064 KB] g=12, 26 evaluated, 12 expanded
+[t=6.034525s, 20064 KB] New best heuristic value for spanner heuristic: 271
+[t=6.034591s, 20064 KB] g=13, 29 evaluated, 13 expanded
+[t=6.034811s, 20064 KB] New best heuristic value for spanner heuristic: 270
+[t=6.034905s, 20064 KB] g=16, 33 evaluated, 16 expanded
+[t=6.035078s, 20064 KB] New best heuristic value for spanner heuristic: 269
+[t=6.035143s, 20064 KB] g=21, 39 evaluated, 21 expanded
+[t=6.035346s, 20064 KB] New best heuristic value for spanner heuristic: 268
+[t=6.035442s, 20064 KB] g=23, 42 evaluated, 23 expanded
+[t=6.035564s, 20064 KB] New best heuristic value for spanner heuristic: 267
+[t=6.035628s, 20064 KB] g=25, 45 evaluated, 25 expanded
+[t=6.035746s, 20064 KB] New best heuristic value for spanner heuristic: 266
+[t=6.035810s, 20064 KB] g=27, 48 evaluated, 27 expanded
+[t=6.035933s, 20064 KB] New best heuristic value for spanner heuristic: 265
+[t=6.035997s, 20064 KB] g=28, 52 evaluated, 28 expanded
+[t=6.036108s, 20064 KB] New best heuristic value for spanner heuristic: 264
+[t=6.036172s, 20064 KB] g=29, 55 evaluated, 29 expanded
+[t=6.036286s, 20064 KB] New best heuristic value for spanner heuristic: 263
+[t=6.036349s, 20064 KB] g=31, 58 evaluated, 31 expanded
+[t=6.036462s, 20064 KB] New best heuristic value for spanner heuristic: 262
+[t=6.036526s, 20064 KB] g=33, 61 evaluated, 33 expanded
+[t=6.036673s, 20064 KB] New best heuristic value for spanner heuristic: 261
+[t=6.036737s, 20064 KB] g=36, 65 evaluated, 36 expanded
+[t=6.036847s, 20064 KB] New best heuristic value for spanner heuristic: 260
+[t=6.036912s, 20064 KB] g=37, 68 evaluated, 37 expanded
+[t=6.037027s, 20064 KB] New best heuristic value for spanner heuristic: 259
+[t=6.037091s, 20064 KB] g=39, 71 evaluated, 39 expanded
+[t=6.037205s, 20064 KB] New best heuristic value for spanner heuristic: 258
+[t=6.037326s, 20064 KB] g=41, 74 evaluated, 41 expanded
+[t=6.037515s, 20064 KB] New best heuristic value for spanner heuristic: 257
+[t=6.037583s, 20064 KB] g=42, 80 evaluated, 42 expanded
+[t=6.037719s, 20064 KB] New best heuristic value for spanner heuristic: 256
+[t=6.037783s, 20064 KB] g=43, 85 evaluated, 43 expanded
+[t=6.037904s, 20064 KB] New best heuristic value for spanner heuristic: 255
+[t=6.037968s, 20064 KB] g=44, 89 evaluated, 44 expanded
+[t=6.038076s, 20064 KB] New best heuristic value for spanner heuristic: 254
+[t=6.038140s, 20064 KB] g=45, 92 evaluated, 45 expanded
+[t=6.038254s, 20064 KB] New best heuristic value for spanner heuristic: 253
+[t=6.038317s, 20064 KB] g=47, 95 evaluated, 47 expanded
+[t=6.038426s, 20064 KB] New best heuristic value for spanner heuristic: 252
+[t=6.038490s, 20064 KB] g=48, 98 evaluated, 48 expanded
+[t=6.038604s, 20064 KB] New best heuristic value for spanner heuristic: 251
+[t=6.038668s, 20064 KB] g=50, 101 evaluated, 50 expanded
+[t=6.038782s, 20064 KB] New best heuristic value for spanner heuristic: 250
+[t=6.038848s, 20064 KB] g=52, 104 evaluated, 52 expanded
+[t=6.038963s, 20064 KB] New best heuristic value for spanner heuristic: 249
+[t=6.039027s, 20064 KB] g=54, 107 evaluated, 54 expanded
+[t=6.039137s, 20064 KB] New best heuristic value for spanner heuristic: 248
+[t=6.039216s, 20064 KB] g=55, 110 evaluated, 55 expanded
+[t=6.039404s, 20064 KB] New best heuristic value for spanner heuristic: 247
+[t=6.039498s, 20064 KB] g=57, 113 evaluated, 57 expanded
+[t=6.039665s, 20064 KB] New best heuristic value for spanner heuristic: 246
+[t=6.039730s, 20064 KB] g=62, 119 evaluated, 62 expanded
+[t=6.039846s, 20064 KB] New best heuristic value for spanner heuristic: 245
+[t=6.039911s, 20064 KB] g=64, 122 evaluated, 64 expanded
+[t=6.040182s, 20064 KB] New best heuristic value for spanner heuristic: 244
+[t=6.040257s, 20064 KB] g=65, 125 evaluated, 65 expanded
+[t=6.040374s, 20064 KB] New best heuristic value for spanner heuristic: 243
+[t=6.040439s, 20064 KB] g=67, 128 evaluated, 67 expanded
+[t=6.040595s, 20064 KB] New best heuristic value for spanner heuristic: 242
+[t=6.040659s, 20064 KB] g=68, 132 evaluated, 68 expanded
+[t=6.040898s, 20064 KB] New best heuristic value for spanner heuristic: 241
+[t=6.040972s, 20064 KB] g=69, 135 evaluated, 69 expanded
+[t=6.041089s, 20064 KB] New best heuristic value for spanner heuristic: 240
+[t=6.041155s, 20064 KB] g=71, 138 evaluated, 71 expanded
+[t=6.041266s, 20064 KB] New best heuristic value for spanner heuristic: 239
+[t=6.041331s, 20064 KB] g=72, 141 evaluated, 72 expanded
+[t=6.041445s, 20064 KB] New best heuristic value for spanner heuristic: 238
+[t=6.041509s, 20064 KB] g=74, 144 evaluated, 74 expanded
+[t=6.041620s, 20064 KB] New best heuristic value for spanner heuristic: 237
+[t=6.041685s, 20064 KB] g=75, 147 evaluated, 75 expanded
+[t=6.041819s, 20064 KB] New best heuristic value for spanner heuristic: 236
+[t=6.041884s, 20064 KB] g=78, 151 evaluated, 78 expanded
+[t=6.041994s, 20064 KB] New best heuristic value for spanner heuristic: 235
+[t=6.042059s, 20064 KB] g=79, 154 evaluated, 79 expanded
+[t=6.042174s, 20064 KB] New best heuristic value for spanner heuristic: 234
+[t=6.042238s, 20064 KB] g=81, 157 evaluated, 81 expanded
+[t=6.042361s, 20064 KB] New best heuristic value for spanner heuristic: 233
+[t=6.042426s, 20064 KB] g=82, 161 evaluated, 82 expanded
+[t=6.042536s, 20064 KB] New best heuristic value for spanner heuristic: 232
+[t=6.042600s, 20064 KB] g=83, 164 evaluated, 83 expanded
+[t=6.042841s, 20064 KB] New best heuristic value for spanner heuristic: 231
+[t=6.042937s, 20064 KB] g=85, 167 evaluated, 85 expanded
+[t=6.043070s, 20064 KB] New best heuristic value for spanner heuristic: 230
+[t=6.043136s, 20064 KB] g=86, 171 evaluated, 86 expanded
+[t=6.043246s, 20064 KB] New best heuristic value for spanner heuristic: 229
+[t=6.043311s, 20064 KB] g=87, 174 evaluated, 87 expanded
+[t=6.043426s, 20064 KB] New best heuristic value for spanner heuristic: 228
+[t=6.043491s, 20064 KB] g=89, 177 evaluated, 89 expanded
+[t=6.043601s, 20064 KB] New best heuristic value for spanner heuristic: 227
+[t=6.043666s, 20064 KB] g=90, 180 evaluated, 90 expanded
+[t=6.043924s, 20064 KB] New best heuristic value for spanner heuristic: 226
+[t=6.044022s, 20064 KB] g=92, 183 evaluated, 92 expanded
+[t=6.044160s, 20064 KB] New best heuristic value for spanner heuristic: 225
+[t=6.044225s, 20064 KB] g=95, 187 evaluated, 95 expanded
+[t=6.044350s, 20064 KB] New best heuristic value for spanner heuristic: 224
+[t=6.044414s, 20064 KB] g=96, 191 evaluated, 96 expanded
+[t=6.044524s, 20064 KB] New best heuristic value for spanner heuristic: 223
+[t=6.044589s, 20064 KB] g=97, 194 evaluated, 97 expanded
+[t=6.044704s, 20064 KB] New best heuristic value for spanner heuristic: 222
+[t=6.044768s, 20064 KB] g=99, 197 evaluated, 99 expanded
+[t=6.044900s, 20064 KB] New best heuristic value for spanner heuristic: 221
+[t=6.044965s, 20064 KB] g=102, 201 evaluated, 102 expanded
+[t=6.045079s, 20064 KB] New best heuristic value for spanner heuristic: 220
+[t=6.045143s, 20064 KB] g=104, 204 evaluated, 104 expanded
+[t=6.045273s, 20064 KB] New best heuristic value for spanner heuristic: 219
+[t=6.045337s, 20064 KB] g=107, 208 evaluated, 107 expanded
+[t=6.045451s, 20064 KB] New best heuristic value for spanner heuristic: 218
+[t=6.045515s, 20064 KB] g=109, 211 evaluated, 109 expanded
+[t=6.045628s, 20064 KB] New best heuristic value for spanner heuristic: 217
+[t=6.045707s, 20064 KB] g=111, 214 evaluated, 111 expanded
+[t=6.045893s, 20064 KB] New best heuristic value for spanner heuristic: 216
+[t=6.045988s, 20064 KB] g=112, 217 evaluated, 112 expanded
+[t=6.046122s, 20064 KB] New best heuristic value for spanner heuristic: 215
+[t=6.046188s, 20064 KB] g=115, 221 evaluated, 115 expanded
+[t=6.046304s, 20064 KB] New best heuristic value for spanner heuristic: 214
+[t=6.046368s, 20064 KB] g=117, 224 evaluated, 117 expanded
+[t=6.046484s, 20064 KB] New best heuristic value for spanner heuristic: 213
+[t=6.046549s, 20064 KB] g=119, 227 evaluated, 119 expanded
+[t=6.046665s, 20064 KB] New best heuristic value for spanner heuristic: 212
+[t=6.046730s, 20064 KB] g=121, 230 evaluated, 121 expanded
+[t=6.046865s, 20064 KB] New best heuristic value for spanner heuristic: 211
+[t=6.046930s, 20064 KB] g=122, 235 evaluated, 122 expanded
+[t=6.047053s, 20064 KB] New best heuristic value for spanner heuristic: 210
+[t=6.047118s, 20064 KB] g=123, 239 evaluated, 123 expanded
+[t=6.047228s, 20064 KB] New best heuristic value for spanner heuristic: 209
+[t=6.047292s, 20064 KB] g=124, 242 evaluated, 124 expanded
+[t=6.047408s, 20064 KB] New best heuristic value for spanner heuristic: 208
+[t=6.047472s, 20064 KB] g=126, 245 evaluated, 126 expanded
+[t=6.047582s, 20064 KB] New best heuristic value for spanner heuristic: 207
+[t=6.047692s, 20064 KB] g=127, 248 evaluated, 127 expanded
+[t=6.047914s, 20064 KB] New best heuristic value for spanner heuristic: 206
+[t=6.048009s, 20064 KB] g=129, 251 evaluated, 129 expanded
+[t=6.048131s, 20064 KB] New best heuristic value for spanner heuristic: 205
+[t=6.048196s, 20064 KB] g=131, 254 evaluated, 131 expanded
+[t=6.048378s, 20064 KB] New best heuristic value for spanner heuristic: 204
+[t=6.048445s, 20064 KB] g=132, 257 evaluated, 132 expanded
+[t=6.048563s, 20064 KB] New best heuristic value for spanner heuristic: 203
+[t=6.048628s, 20064 KB] g=134, 260 evaluated, 134 expanded
+[t=6.048739s, 20064 KB] New best heuristic value for spanner heuristic: 202
+[t=6.048803s, 20064 KB] g=135, 263 evaluated, 135 expanded
+[t=6.048919s, 20064 KB] New best heuristic value for spanner heuristic: 201
+[t=6.048984s, 20064 KB] g=137, 266 evaluated, 137 expanded
+[t=6.049094s, 20064 KB] New best heuristic value for spanner heuristic: 200
+[t=6.049160s, 20064 KB] g=138, 269 evaluated, 138 expanded
+[t=6.049276s, 20064 KB] New best heuristic value for spanner heuristic: 199
+[t=6.049341s, 20064 KB] g=140, 272 evaluated, 140 expanded
+[t=6.049501s, 20064 KB] New best heuristic value for spanner heuristic: 198
+[t=6.049598s, 20064 KB] g=141, 279 evaluated, 141 expanded
+[t=6.049752s, 20064 KB] New best heuristic value for spanner heuristic: 197
+[t=6.049818s, 20064 KB] g=142, 285 evaluated, 142 expanded
+[t=6.050045s, 20064 KB] New best heuristic value for spanner heuristic: 196
+[t=6.050125s, 20064 KB] g=143, 290 evaluated, 143 expanded
+[t=6.050251s, 20064 KB] New best heuristic value for spanner heuristic: 195
+[t=6.050317s, 20064 KB] g=144, 294 evaluated, 144 expanded
+[t=6.050429s, 20064 KB] New best heuristic value for spanner heuristic: 194
+[t=6.050494s, 20064 KB] g=145, 297 evaluated, 145 expanded
+[t=6.050611s, 20064 KB] New best heuristic value for spanner heuristic: 193
+[t=6.050675s, 20064 KB] g=147, 300 evaluated, 147 expanded
+[t=6.050793s, 20064 KB] New best heuristic value for spanner heuristic: 192
+[t=6.050860s, 20064 KB] g=149, 303 evaluated, 149 expanded
+[t=6.050983s, 20064 KB] New best heuristic value for spanner heuristic: 191
+[t=6.051048s, 20064 KB] g=150, 307 evaluated, 150 expanded
+[t=6.051158s, 20064 KB] New best heuristic value for spanner heuristic: 190
+[t=6.051223s, 20064 KB] g=151, 310 evaluated, 151 expanded
+[t=6.051338s, 20064 KB] New best heuristic value for spanner heuristic: 189
+[t=6.051402s, 20064 KB] g=153, 313 evaluated, 153 expanded
+[t=6.051518s, 20064 KB] New best heuristic value for spanner heuristic: 188
+[t=6.051582s, 20064 KB] g=155, 316 evaluated, 155 expanded
+[t=6.051692s, 20064 KB] New best heuristic value for spanner heuristic: 187
+[t=6.051770s, 20064 KB] g=156, 319 evaluated, 156 expanded
+[t=6.051960s, 20064 KB] New best heuristic value for spanner heuristic: 186
+[t=6.052056s, 20064 KB] g=158, 322 evaluated, 158 expanded
+[t=6.052212s, 20064 KB] New best heuristic value for spanner heuristic: 185
+[t=6.052278s, 20064 KB] g=159, 328 evaluated, 159 expanded
+[t=6.052414s, 20064 KB] New best heuristic value for spanner heuristic: 184
+[t=6.052480s, 20064 KB] g=160, 333 evaluated, 160 expanded
+[t=6.052601s, 20064 KB] New best heuristic value for spanner heuristic: 183
+[t=6.052666s, 20064 KB] g=161, 337 evaluated, 161 expanded
+[t=6.052776s, 20064 KB] New best heuristic value for spanner heuristic: 182
+[t=6.052840s, 20064 KB] g=162, 340 evaluated, 162 expanded
+[t=6.053022s, 20064 KB] New best heuristic value for spanner heuristic: 181
+[t=6.053117s, 20064 KB] g=164, 343 evaluated, 164 expanded
+[t=6.053238s, 20064 KB] New best heuristic value for spanner heuristic: 180
+[t=6.053368s, 20064 KB] g=166, 346 evaluated, 166 expanded
+[t=6.053508s, 20064 KB] New best heuristic value for spanner heuristic: 179
+[t=6.053575s, 20064 KB] g=167, 350 evaluated, 167 expanded
+[t=6.053686s, 20064 KB] New best heuristic value for spanner heuristic: 178
+[t=6.053750s, 20064 KB] g=168, 353 evaluated, 168 expanded
+[t=6.053867s, 20064 KB] New best heuristic value for spanner heuristic: 177
+[t=6.053932s, 20064 KB] g=170, 356 evaluated, 170 expanded
+[t=6.054049s, 20064 KB] New best heuristic value for spanner heuristic: 176
+[t=6.054115s, 20064 KB] g=172, 359 evaluated, 172 expanded
+[t=6.054231s, 20064 KB] New best heuristic value for spanner heuristic: 175
+[t=6.054296s, 20064 KB] g=174, 362 evaluated, 174 expanded
+[t=6.054411s, 20064 KB] New best heuristic value for spanner heuristic: 174
+[t=6.054476s, 20064 KB] g=176, 365 evaluated, 176 expanded
+[t=6.054592s, 20064 KB] New best heuristic value for spanner heuristic: 173
+[t=6.054658s, 20064 KB] g=178, 368 evaluated, 178 expanded
+[t=6.054780s, 20064 KB] New best heuristic value for spanner heuristic: 172
+[t=6.054845s, 20064 KB] g=179, 372 evaluated, 179 expanded
+[t=6.055025s, 20064 KB] New best heuristic value for spanner heuristic: 171
+[t=6.055119s, 20064 KB] g=180, 375 evaluated, 180 expanded
+[t=6.055258s, 20064 KB] New best heuristic value for spanner heuristic: 170
+[t=6.055323s, 20064 KB] g=183, 379 evaluated, 183 expanded
+[t=6.055438s, 20064 KB] New best heuristic value for spanner heuristic: 169
+[t=6.055502s, 20064 KB] g=185, 382 evaluated, 185 expanded
+[t=6.055612s, 20064 KB] New best heuristic value for spanner heuristic: 168
+[t=6.055676s, 20064 KB] g=186, 385 evaluated, 186 expanded
+[t=6.055790s, 20064 KB] New best heuristic value for spanner heuristic: 167
+[t=6.055854s, 20064 KB] g=188, 388 evaluated, 188 expanded
+[t=6.055976s, 20064 KB] New best heuristic value for spanner heuristic: 166
+[t=6.056040s, 20064 KB] g=189, 392 evaluated, 189 expanded
+[t=6.056149s, 20064 KB] New best heuristic value for spanner heuristic: 165
+[t=6.056213s, 20064 KB] g=190, 395 evaluated, 190 expanded
+[t=6.056328s, 20064 KB] New best heuristic value for spanner heuristic: 164
+[t=6.056392s, 20064 KB] g=192, 398 evaluated, 192 expanded
+[t=6.056501s, 20064 KB] New best heuristic value for spanner heuristic: 163
+[t=6.056565s, 20064 KB] g=193, 401 evaluated, 193 expanded
+[t=6.056711s, 20064 KB] New best heuristic value for spanner heuristic: 162
+[t=6.056775s, 20064 KB] g=197, 406 evaluated, 197 expanded
+[t=6.056897s, 20064 KB] New best heuristic value for spanner heuristic: 161
+[t=6.056961s, 20064 KB] g=198, 410 evaluated, 198 expanded
+[t=6.057168s, 20064 KB] New best heuristic value for spanner heuristic: 160
+[t=6.057239s, 20064 KB] g=199, 413 evaluated, 199 expanded
+[t=6.057358s, 20064 KB] New best heuristic value for spanner heuristic: 159
+[t=6.057425s, 20064 KB] g=201, 416 evaluated, 201 expanded
+[t=6.057537s, 20064 KB] New best heuristic value for spanner heuristic: 158
+[t=6.057602s, 20064 KB] g=202, 419 evaluated, 202 expanded
+[t=6.057717s, 20064 KB] New best heuristic value for spanner heuristic: 157
+[t=6.057781s, 20064 KB] g=204, 422 evaluated, 204 expanded
+[t=6.057932s, 20064 KB] New best heuristic value for spanner heuristic: 156
+[t=6.057999s, 20064 KB] g=205, 427 evaluated, 205 expanded
+[t=6.058121s, 20064 KB] New best heuristic value for spanner heuristic: 155
+[t=6.058186s, 20064 KB] g=206, 431 evaluated, 206 expanded
+[t=6.058296s, 20064 KB] New best heuristic value for spanner heuristic: 154
+[t=6.058360s, 20064 KB] g=207, 434 evaluated, 207 expanded
+[t=6.058473s, 20064 KB] New best heuristic value for spanner heuristic: 153
+[t=6.058538s, 20064 KB] g=209, 437 evaluated, 209 expanded
+[t=6.058655s, 20064 KB] New best heuristic value for spanner heuristic: 152
+[t=6.058720s, 20064 KB] g=211, 440 evaluated, 211 expanded
+[t=6.058955s, 20064 KB] New best heuristic value for spanner heuristic: 151
+[t=6.059054s, 20064 KB] g=212, 443 evaluated, 212 expanded
+[t=6.059220s, 20064 KB] New best heuristic value for spanner heuristic: 150
+[t=6.059298s, 20064 KB] g=214, 446 evaluated, 214 expanded
+[t=6.059417s, 20064 KB] New best heuristic value for spanner heuristic: 149
+[t=6.059483s, 20064 KB] g=216, 449 evaluated, 216 expanded
+[t=6.059597s, 20064 KB] New best heuristic value for spanner heuristic: 148
+[t=6.059662s, 20064 KB] g=217, 452 evaluated, 217 expanded
+[t=6.059778s, 20064 KB] New best heuristic value for spanner heuristic: 147
+[t=6.059843s, 20064 KB] g=219, 455 evaluated, 219 expanded
+[t=6.059966s, 20064 KB] New best heuristic value for spanner heuristic: 146
+[t=6.060033s, 20064 KB] g=220, 459 evaluated, 220 expanded
+[t=6.060145s, 20064 KB] New best heuristic value for spanner heuristic: 145
+[t=6.060211s, 20064 KB] g=221, 462 evaluated, 221 expanded
+[t=6.060327s, 20064 KB] New best heuristic value for spanner heuristic: 144
+[t=6.060392s, 20064 KB] g=223, 465 evaluated, 223 expanded
+[t=6.060508s, 20064 KB] New best heuristic value for spanner heuristic: 143
+[t=6.060573s, 20064 KB] g=225, 468 evaluated, 225 expanded
+[t=6.060696s, 20064 KB] New best heuristic value for spanner heuristic: 142
+[t=6.060760s, 20064 KB] g=226, 472 evaluated, 226 expanded
+[t=6.060871s, 20064 KB] New best heuristic value for spanner heuristic: 141
+[t=6.061024s, 20064 KB] g=227, 475 evaluated, 227 expanded
+[t=6.061152s, 20064 KB] New best heuristic value for spanner heuristic: 140
+[t=6.061217s, 20064 KB] g=229, 478 evaluated, 229 expanded
+[t=6.062704s, 20064 KB] New best heuristic value for spanner heuristic: 139
+[t=6.062807s, 20064 KB] g=232, 620 evaluated, 232 expanded
+[t=6.177516s, 20720 KB] New best heuristic value for spanner heuristic: 138
+[t=6.177648s, 20720 KB] g=233, 20219 evaluated, 233 expanded
+[t=6.278148s, 22216 KB] New best heuristic value for spanner heuristic: 137
+[t=6.278247s, 22216 KB] g=234, 39539 evaluated, 234 expanded
+[t=6.348446s, 24604 KB] New best heuristic value for spanner heuristic: 136
+[t=6.348553s, 24604 KB] g=235, 58582 evaluated, 235 expanded
+[t=6.435428s, 25556 KB] New best heuristic value for spanner heuristic: 135
+[t=6.435582s, 25556 KB] g=236, 77350 evaluated, 236 expanded
+[t=6.530544s, 26868 KB] New best heuristic value for spanner heuristic: 134
+[t=6.530687s, 26868 KB] g=237, 95845 evaluated, 237 expanded
+[t=6.622137s, 30008 KB] New best heuristic value for spanner heuristic: 133
+[t=6.622252s, 30008 KB] g=238, 114069 evaluated, 238 expanded
+[t=6.687756s, 30460 KB] New best heuristic value for spanner heuristic: 132
+[t=6.687870s, 30460 KB] g=239, 132024 evaluated, 239 expanded
+[t=6.752076s, 31728 KB] New best heuristic value for spanner heuristic: 131
+[t=6.752195s, 31728 KB] g=240, 149712 evaluated, 240 expanded
+[t=6.833724s, 32960 KB] New best heuristic value for spanner heuristic: 130
+[t=6.833842s, 32960 KB] g=241, 167135 evaluated, 241 expanded
+[t=6.896884s, 34048 KB] New best heuristic value for spanner heuristic: 129
+[t=6.897000s, 34048 KB] g=242, 184295 evaluated, 242 expanded
+[t=6.957649s, 35376 KB] New best heuristic value for spanner heuristic: 128
+[t=6.957756s, 35376 KB] g=243, 201194 evaluated, 243 expanded
+[t=7.014217s, 36328 KB] New best heuristic value for spanner heuristic: 127
+[t=7.014321s, 36328 KB] g=244, 217834 evaluated, 244 expanded
+[t=7.088695s, 40700 KB] New best heuristic value for spanner heuristic: 126
+[t=7.088802s, 40700 KB] g=245, 234217 evaluated, 245 expanded
+[t=7.146624s, 40768 KB] New best heuristic value for spanner heuristic: 125
+[t=7.146732s, 40768 KB] g=246, 250345 evaluated, 246 expanded
+[t=7.205295s, 41904 KB] New best heuristic value for spanner heuristic: 124
+[t=7.205404s, 41904 KB] g=247, 266220 evaluated, 247 expanded
+[t=7.272095s, 43020 KB] New best heuristic value for spanner heuristic: 123
+[t=7.272250s, 43020 KB] g=248, 281844 evaluated, 248 expanded
+[t=7.366455s, 43972 KB] New best heuristic value for spanner heuristic: 122
+[t=7.366609s, 43972 KB] g=249, 297219 evaluated, 249 expanded
+[t=7.457967s, 45060 KB] New best heuristic value for spanner heuristic: 121
+[t=7.458156s, 45060 KB] g=250, 312347 evaluated, 250 expanded
+[t=7.531275s, 46148 KB] New best heuristic value for spanner heuristic: 120
+[t=7.531389s, 46148 KB] g=251, 327230 evaluated, 251 expanded
+[t=7.585953s, 47276 KB] New best heuristic value for spanner heuristic: 119
+[t=7.586072s, 47276 KB] g=252, 341870 evaluated, 252 expanded
+[t=7.639395s, 48228 KB] New best heuristic value for spanner heuristic: 118
+[t=7.639523s, 48228 KB] g=253, 356269 evaluated, 253 expanded
+[t=7.692507s, 49180 KB] New best heuristic value for spanner heuristic: 117
+[t=7.692622s, 49180 KB] g=254, 370429 evaluated, 254 expanded
+[t=7.747826s, 50276 KB] New best heuristic value for spanner heuristic: 116
+[t=7.747933s, 50276 KB] g=255, 384352 evaluated, 255 expanded
+[t=7.802308s, 51244 KB] New best heuristic value for spanner heuristic: 115
+[t=7.802431s, 51244 KB] g=256, 398040 evaluated, 256 expanded
+[t=7.857315s, 52192 KB] New best heuristic value for spanner heuristic: 114
+[t=7.857454s, 52192 KB] g=257, 411495 evaluated, 257 expanded
+[t=7.911146s, 53008 KB] New best heuristic value for spanner heuristic: 113
+[t=7.911252s, 53008 KB] g=258, 424719 evaluated, 258 expanded
+[t=7.977344s, 53960 KB] New best heuristic value for spanner heuristic: 112
+[t=7.977498s, 53960 KB] g=259, 437714 evaluated, 259 expanded
+[t=8.043222s, 54944 KB] New best heuristic value for spanner heuristic: 111
+[t=8.043361s, 54944 KB] g=260, 450482 evaluated, 260 expanded
+[t=8.153524s, 63140 KB] New best heuristic value for spanner heuristic: 110
+[t=8.153660s, 63140 KB] g=261, 463025 evaluated, 261 expanded
+[t=8.231144s, 63140 KB] New best heuristic value for spanner heuristic: 109
+[t=8.231300s, 63140 KB] g=262, 475345 evaluated, 262 expanded
+[t=8.307595s, 63140 KB] New best heuristic value for spanner heuristic: 108
+[t=8.307751s, 63140 KB] g=263, 487444 evaluated, 263 expanded
+[t=8.364592s, 63140 KB] New best heuristic value for spanner heuristic: 107
+[t=8.364706s, 63140 KB] g=264, 499324 evaluated, 264 expanded
+[t=8.410797s, 63320 KB] New best heuristic value for spanner heuristic: 106
+[t=8.410909s, 63320 KB] g=265, 510987 evaluated, 265 expanded
+[t=8.456300s, 64136 KB] New best heuristic value for spanner heuristic: 105
+[t=8.456410s, 64136 KB] g=266, 522435 evaluated, 266 expanded
+[t=8.501041s, 64816 KB] New best heuristic value for spanner heuristic: 104
+[t=8.501155s, 64816 KB] g=267, 533670 evaluated, 267 expanded
+[t=8.544021s, 65628 KB] New best heuristic value for spanner heuristic: 103
+[t=8.544152s, 65628 KB] g=268, 544694 evaluated, 268 expanded
+[t=8.586415s, 66484 KB] New best heuristic value for spanner heuristic: 102
+[t=8.586526s, 66484 KB] g=269, 555509 evaluated, 269 expanded
+[t=8.630062s, 67164 KB] New best heuristic value for spanner heuristic: 101
+[t=8.630173s, 67164 KB] g=270, 566117 evaluated, 270 expanded
+[t=8.672719s, 67844 KB] New best heuristic value for spanner heuristic: 100
+[t=8.672842s, 67844 KB] g=271, 576520 evaluated, 271 expanded
+[t=8.721099s, 68692 KB] New best heuristic value for spanner heuristic: 99
+[t=8.721256s, 68692 KB] g=272, 586720 evaluated, 272 expanded
+[t=8.784785s, 69412 KB] New best heuristic value for spanner heuristic: 98
+[t=8.784934s, 69412 KB] g=273, 596719 evaluated, 273 expanded
+[t=8.826472s, 70132 KB] New best heuristic value for spanner heuristic: 97
+[t=8.826584s, 70132 KB] g=274, 606519 evaluated, 274 expanded
+[t=8.866584s, 70812 KB] New best heuristic value for spanner heuristic: 96
+[t=8.866699s, 70812 KB] g=275, 616122 evaluated, 275 expanded
+[t=8.912956s, 71356 KB] New best heuristic value for spanner heuristic: 95
+[t=8.913111s, 71356 KB] g=276, 625530 evaluated, 276 expanded
+[t=8.971937s, 72036 KB] New best heuristic value for spanner heuristic: 94
+[t=8.972089s, 72036 KB] g=277, 634745 evaluated, 277 expanded
+[t=9.011980s, 72764 KB] New best heuristic value for spanner heuristic: 93
+[t=9.012214s, 72764 KB] g=278, 643769 evaluated, 278 expanded
+[t=9.060272s, 73308 KB] New best heuristic value for spanner heuristic: 92
+[t=9.060427s, 73308 KB] g=279, 652604 evaluated, 279 expanded
+[t=9.102754s, 74004 KB] New best heuristic value for spanner heuristic: 91
+[t=9.102853s, 74004 KB] g=280, 661252 evaluated, 280 expanded
+[t=9.135943s, 74596 KB] New best heuristic value for spanner heuristic: 90
+[t=9.136053s, 74596 KB] g=281, 669715 evaluated, 281 expanded
+[t=9.172357s, 75004 KB] New best heuristic value for spanner heuristic: 89
+[t=9.172475s, 75004 KB] g=282, 677995 evaluated, 282 expanded
+[t=9.208526s, 75704 KB] New best heuristic value for spanner heuristic: 88
+[t=9.208643s, 75704 KB] g=283, 686094 evaluated, 283 expanded
+[t=9.244658s, 76256 KB] New best heuristic value for spanner heuristic: 87
+[t=9.244775s, 76256 KB] g=284, 694014 evaluated, 284 expanded
+[t=9.275568s, 76800 KB] New best heuristic value for spanner heuristic: 86
+[t=9.275677s, 76800 KB] g=285, 701757 evaluated, 285 expanded
+[t=9.305654s, 77208 KB] New best heuristic value for spanner heuristic: 85
+[t=9.305752s, 77208 KB] g=286, 709325 evaluated, 286 expanded
+[t=9.335674s, 77752 KB] New best heuristic value for spanner heuristic: 84
+[t=9.335782s, 77752 KB] g=287, 716720 evaluated, 287 expanded
+[t=9.364567s, 78296 KB] New best heuristic value for spanner heuristic: 83
+[t=9.364660s, 78296 KB] g=288, 723944 evaluated, 288 expanded
+[t=9.391920s, 78864 KB] New best heuristic value for spanner heuristic: 82
+[t=9.392009s, 78864 KB] g=289, 730999 evaluated, 289 expanded
+[t=9.418178s, 79272 KB] New best heuristic value for spanner heuristic: 81
+[t=9.418264s, 79272 KB] g=290, 737887 evaluated, 290 expanded
+[t=9.444179s, 79824 KB] New best heuristic value for spanner heuristic: 80
+[t=9.444263s, 79824 KB] g=291, 744610 evaluated, 291 expanded
+[t=9.469545s, 80232 KB] New best heuristic value for spanner heuristic: 79
+[t=9.469656s, 80232 KB] g=292, 751170 evaluated, 292 expanded
+[t=9.497294s, 80640 KB] New best heuristic value for spanner heuristic: 78
+[t=9.497426s, 80640 KB] g=293, 757569 evaluated, 293 expanded
+[t=9.536862s, 81048 KB] New best heuristic value for spanner heuristic: 77
+[t=9.536999s, 81048 KB] g=294, 763809 evaluated, 294 expanded
+[t=9.577572s, 81600 KB] New best heuristic value for spanner heuristic: 76
+[t=9.577701s, 81600 KB] g=295, 769892 evaluated, 295 expanded
+[t=9.608552s, 82024 KB] New best heuristic value for spanner heuristic: 75
+[t=9.608649s, 82024 KB] g=296, 775820 evaluated, 296 expanded
+[t=9.632830s, 82296 KB] New best heuristic value for spanner heuristic: 74
+[t=9.632919s, 82296 KB] g=297, 781595 evaluated, 297 expanded
+[t=9.656133s, 82704 KB] New best heuristic value for spanner heuristic: 73
+[t=9.656215s, 82704 KB] g=298, 787219 evaluated, 298 expanded
+[t=9.684513s, 83112 KB] New best heuristic value for spanner heuristic: 72
+[t=9.684640s, 83112 KB] g=299, 792694 evaluated, 299 expanded
+[t=9.720542s, 83520 KB] New best heuristic value for spanner heuristic: 71
+[t=9.720658s, 83520 KB] g=300, 798022 evaluated, 300 expanded
+[t=9.755711s, 83944 KB] New best heuristic value for spanner heuristic: 70
+[t=9.755824s, 83944 KB] g=301, 803205 evaluated, 301 expanded
+[t=9.786045s, 84216 KB] New best heuristic value for spanner heuristic: 69
+[t=9.786178s, 84216 KB] g=302, 808245 evaluated, 302 expanded
+[t=9.822782s, 84620 KB] New best heuristic value for spanner heuristic: 68
+[t=9.822937s, 84620 KB] g=303, 813144 evaluated, 303 expanded
+[t=9.848912s, 84892 KB] New best heuristic value for spanner heuristic: 67
+[t=9.849045s, 84892 KB] g=304, 817904 evaluated, 304 expanded
+[t=9.870097s, 85316 KB] New best heuristic value for spanner heuristic: 66
+[t=9.870247s, 85316 KB] g=305, 822527 evaluated, 305 expanded
+[t=9.893451s, 85588 KB] New best heuristic value for spanner heuristic: 65
+[t=9.893589s, 85588 KB] g=306, 827015 evaluated, 306 expanded
+[t=9.912855s, 85860 KB] New best heuristic value for spanner heuristic: 64
+[t=9.912959s, 85860 KB] g=307, 831370 evaluated, 307 expanded
+[t=9.931017s, 86132 KB] New best heuristic value for spanner heuristic: 63
+[t=9.931100s, 86132 KB] g=308, 835594 evaluated, 308 expanded
+[t=9.948505s, 86404 KB] New best heuristic value for spanner heuristic: 62
+[t=9.948578s, 86404 KB] g=309, 839689 evaluated, 309 expanded
+[t=9.965780s, 86676 KB] New best heuristic value for spanner heuristic: 61
+[t=9.965870s, 86676 KB] g=310, 843657 evaluated, 310 expanded
+[t=9.984237s, 86948 KB] New best heuristic value for spanner heuristic: 60
+[t=9.984342s, 86948 KB] g=311, 847500 evaluated, 311 expanded
+[t=10.001143s, 87220 KB] New best heuristic value for spanner heuristic: 59
+[t=10.001249s, 87220 KB] g=312, 851220 evaluated, 312 expanded
+[t=10.018304s, 87492 KB] New best heuristic value for spanner heuristic: 58
+[t=10.018443s, 87492 KB] g=313, 854819 evaluated, 313 expanded
+[t=10.035470s, 87764 KB] New best heuristic value for spanner heuristic: 57
+[t=10.035603s, 87764 KB] g=314, 858299 evaluated, 314 expanded
+[t=10.053483s, 88044 KB] New best heuristic value for spanner heuristic: 56
+[t=10.053594s, 88044 KB] g=315, 861662 evaluated, 315 expanded
+[t=10.152798s, 104568 KB] New best heuristic value for spanner heuristic: 55
+[t=10.152920s, 104568 KB] g=316, 864910 evaluated, 316 expanded
+[t=10.168211s, 104568 KB] New best heuristic value for spanner heuristic: 54
+[t=10.168338s, 104568 KB] g=317, 868045 evaluated, 317 expanded
+[t=10.183225s, 104568 KB] New best heuristic value for spanner heuristic: 53
+[t=10.183327s, 104568 KB] g=318, 871069 evaluated, 318 expanded
+[t=10.196946s, 104568 KB] New best heuristic value for spanner heuristic: 52
+[t=10.197065s, 104568 KB] g=319, 873984 evaluated, 319 expanded
+[t=10.210536s, 104568 KB] New best heuristic value for spanner heuristic: 51
+[t=10.210673s, 104568 KB] g=320, 876792 evaluated, 320 expanded
+[t=10.225959s, 104568 KB] New best heuristic value for spanner heuristic: 50
+[t=10.226086s, 104568 KB] g=321, 879495 evaluated, 321 expanded
+[t=10.239699s, 104568 KB] New best heuristic value for spanner heuristic: 49
+[t=10.239811s, 104568 KB] g=322, 882095 evaluated, 322 expanded
+[t=10.252822s, 104568 KB] New best heuristic value for spanner heuristic: 48
+[t=10.252948s, 104568 KB] g=323, 884594 evaluated, 323 expanded
+[t=10.265606s, 104568 KB] New best heuristic value for spanner heuristic: 47
+[t=10.265733s, 104568 KB] g=324, 886994 evaluated, 324 expanded
+[t=10.277631s, 104568 KB] New best heuristic value for spanner heuristic: 46
+[t=10.277746s, 104568 KB] g=325, 889297 evaluated, 325 expanded
+[t=10.288825s, 104568 KB] New best heuristic value for spanner heuristic: 45
+[t=10.288994s, 104568 KB] g=326, 891505 evaluated, 326 expanded
+[t=10.300543s, 104568 KB] New best heuristic value for spanner heuristic: 44
+[t=10.300665s, 104568 KB] g=327, 893620 evaluated, 327 expanded
+[t=10.310142s, 104568 KB] New best heuristic value for spanner heuristic: 43
+[t=10.310231s, 104568 KB] g=328, 895644 evaluated, 328 expanded
+[t=10.319129s, 104568 KB] New best heuristic value for spanner heuristic: 42
+[t=10.319212s, 104568 KB] g=329, 897579 evaluated, 329 expanded
+[t=10.327892s, 104568 KB] New best heuristic value for spanner heuristic: 41
+[t=10.328063s, 104568 KB] g=330, 899427 evaluated, 330 expanded
+[t=10.336397s, 104568 KB] New best heuristic value for spanner heuristic: 40
+[t=10.336508s, 104568 KB] g=331, 901190 evaluated, 331 expanded
+[t=10.344061s, 104568 KB] New best heuristic value for spanner heuristic: 39
+[t=10.344124s, 104568 KB] g=332, 902870 evaluated, 332 expanded
+[t=10.351115s, 104568 KB] New best heuristic value for spanner heuristic: 38
+[t=10.351171s, 104568 KB] g=333, 904469 evaluated, 333 expanded
+[t=10.357735s, 104568 KB] New best heuristic value for spanner heuristic: 37
+[t=10.357847s, 104568 KB] g=334, 905989 evaluated, 334 expanded
+[t=10.364306s, 104568 KB] New best heuristic value for spanner heuristic: 36
+[t=10.364363s, 104568 KB] g=335, 907432 evaluated, 335 expanded
+[t=10.370164s, 104568 KB] New best heuristic value for spanner heuristic: 35
+[t=10.370273s, 104568 KB] g=336, 908800 evaluated, 336 expanded
+[t=10.375834s, 104568 KB] New best heuristic value for spanner heuristic: 34
+[t=10.375895s, 104568 KB] g=337, 910095 evaluated, 337 expanded
+[t=10.381070s, 104568 KB] New best heuristic value for spanner heuristic: 33
+[t=10.381125s, 104568 KB] g=338, 911319 evaluated, 338 expanded
+[t=10.385950s, 104568 KB] New best heuristic value for spanner heuristic: 32
+[t=10.386008s, 104568 KB] g=339, 912474 evaluated, 339 expanded
+[t=10.390660s, 104568 KB] New best heuristic value for spanner heuristic: 31
+[t=10.390708s, 104568 KB] g=340, 913562 evaluated, 340 expanded
+[t=10.395054s, 104568 KB] New best heuristic value for spanner heuristic: 30
+[t=10.395105s, 104568 KB] g=341, 914585 evaluated, 341 expanded
+[t=10.399308s, 104568 KB] New best heuristic value for spanner heuristic: 29
+[t=10.399366s, 104568 KB] g=342, 915545 evaluated, 342 expanded
+[t=10.403165s, 104568 KB] New best heuristic value for spanner heuristic: 28
+[t=10.403218s, 104568 KB] g=343, 916444 evaluated, 343 expanded
+[t=10.406775s, 104568 KB] New best heuristic value for spanner heuristic: 27
+[t=10.406827s, 104568 KB] g=344, 917284 evaluated, 344 expanded
+[t=10.410162s, 104568 KB] New best heuristic value for spanner heuristic: 26
+[t=10.410213s, 104568 KB] g=345, 918067 evaluated, 345 expanded
+[t=10.413310s, 104568 KB] New best heuristic value for spanner heuristic: 25
+[t=10.413419s, 104568 KB] g=346, 918795 evaluated, 346 expanded
+[t=10.416216s, 104568 KB] New best heuristic value for spanner heuristic: 24
+[t=10.416266s, 104568 KB] g=347, 919470 evaluated, 347 expanded
+[t=10.418905s, 104568 KB] New best heuristic value for spanner heuristic: 23
+[t=10.418951s, 104568 KB] g=348, 920094 evaluated, 348 expanded
+[t=10.421272s, 104568 KB] New best heuristic value for spanner heuristic: 22
+[t=10.421376s, 104568 KB] g=349, 920669 evaluated, 349 expanded
+[t=10.423498s, 104568 KB] New best heuristic value for spanner heuristic: 21
+[t=10.423544s, 104568 KB] g=350, 921197 evaluated, 350 expanded
+[t=10.425515s, 104568 KB] New best heuristic value for spanner heuristic: 20
+[t=10.425561s, 104568 KB] g=351, 921680 evaluated, 351 expanded
+[t=10.427314s, 104568 KB] New best heuristic value for spanner heuristic: 19
+[t=10.427358s, 104568 KB] g=352, 922120 evaluated, 352 expanded
+[t=10.429007s, 104568 KB] New best heuristic value for spanner heuristic: 18
+[t=10.429107s, 104568 KB] g=353, 922519 evaluated, 353 expanded
+[t=10.430746s, 104568 KB] New best heuristic value for spanner heuristic: 17
+[t=10.430800s, 104568 KB] g=354, 922879 evaluated, 354 expanded
+[t=10.432125s, 104568 KB] New best heuristic value for spanner heuristic: 16
+[t=10.432172s, 104568 KB] g=355, 923202 evaluated, 355 expanded
+[t=10.433398s, 104568 KB] New best heuristic value for spanner heuristic: 15
+[t=10.433443s, 104568 KB] g=356, 923490 evaluated, 356 expanded
+[t=10.434516s, 104568 KB] New best heuristic value for spanner heuristic: 14
+[t=10.434559s, 104568 KB] g=357, 923745 evaluated, 357 expanded
+[t=10.435464s, 104568 KB] New best heuristic value for spanner heuristic: 13
+[t=10.435497s, 104568 KB] g=358, 923969 evaluated, 358 expanded
+[t=10.436338s, 104568 KB] New best heuristic value for spanner heuristic: 12
+[t=10.436381s, 104568 KB] g=359, 924164 evaluated, 359 expanded
+[t=10.437123s, 104568 KB] New best heuristic value for spanner heuristic: 11
+[t=10.437167s, 104568 KB] g=360, 924332 evaluated, 360 expanded
+[t=10.437816s, 104568 KB] New best heuristic value for spanner heuristic: 10
+[t=10.437858s, 104568 KB] g=361, 924475 evaluated, 361 expanded
+[t=10.438369s, 104568 KB] New best heuristic value for spanner heuristic: 9
+[t=10.438397s, 104568 KB] g=362, 924595 evaluated, 362 expanded
+[t=10.438853s, 104568 KB] New best heuristic value for spanner heuristic: 8
+[t=10.438892s, 104568 KB] g=363, 924694 evaluated, 363 expanded
+[t=10.439230s, 104568 KB] New best heuristic value for spanner heuristic: 7
+[t=10.439262s, 104568 KB] g=364, 924774 evaluated, 364 expanded
+[t=10.439544s, 104568 KB] New best heuristic value for spanner heuristic: 6
+[t=10.439572s, 104568 KB] g=365, 924837 evaluated, 365 expanded
+[t=10.439826s, 104568 KB] New best heuristic value for spanner heuristic: 5
+[t=10.439864s, 104568 KB] g=366, 924885 evaluated, 366 expanded
+[t=10.440033s, 104568 KB] New best heuristic value for spanner heuristic: 4
+[t=10.440134s, 104568 KB] g=367, 924920 evaluated, 367 expanded
+[t=10.440276s, 104568 KB] New best heuristic value for spanner heuristic: 3
+[t=10.440304s, 104568 KB] g=368, 924944 evaluated, 368 expanded
+[t=10.440401s, 104568 KB] New best heuristic value for spanner heuristic: 2
+[t=10.440427s, 104568 KB] g=369, 924959 evaluated, 369 expanded
+[t=10.440495s, 104568 KB] New best heuristic value for spanner heuristic: 1
+[t=10.440522s, 104568 KB] g=370, 924967 evaluated, 370 expanded
+[t=10.440567s, 104568 KB] New best heuristic value for spanner heuristic: 0
+[t=10.440593s, 104568 KB] g=371, 924970 evaluated, 371 expanded
+[t=10.440619s, 104568 KB] Solution found!
+[t=10.440696s, 104568 KB] Actual search time: 4.407931s
+walk shed location1 bob (1)
+pickup_spanner location1 spanner89 bob (1)
+pickup_spanner location1 spanner110 bob (1)
+walk location1 location2 bob (1)
+pickup_spanner location2 spanner91 bob (1)
+pickup_spanner location2 spanner85 bob (1)
+walk location2 location3 bob (1)
+pickup_spanner location3 spanner68 bob (1)
+pickup_spanner location3 spanner64 bob (1)
+walk location3 location4 bob (1)
+pickup_spanner location4 spanner132 bob (1)
+pickup_spanner location4 spanner119 bob (1)
+pickup_spanner location4 spanner10 bob (1)
+walk location4 location5 bob (1)
+walk location5 location6 bob (1)
+pickup_spanner location6 spanner8 bob (1)
+walk location6 location7 bob (1)
+walk location7 location8 bob (1)
+walk location8 location9 bob (1)
+walk location9 location10 bob (1)
+pickup_spanner location10 spanner111 bob (1)
+walk location10 location11 bob (1)
+pickup_spanner location11 spanner72 bob (1)
+walk location11 location12 bob (1)
+pickup_spanner location12 spanner5 bob (1)
+walk location12 location13 bob (1)
+pickup_spanner location13 spanner40 bob (1)
+pickup_spanner location13 spanner129 bob (1)
+pickup_spanner location13 spanner101 bob (1)
+walk location13 location14 bob (1)
+pickup_spanner location14 spanner31 bob (1)
+walk location14 location15 bob (1)
+pickup_spanner location15 spanner99 bob (1)
+walk location15 location16 bob (1)
+walk location16 location17 bob (1)
+pickup_spanner location17 spanner75 bob (1)
+pickup_spanner location17 spanner20 bob (1)
+walk location17 location18 bob (1)
+pickup_spanner location18 spanner11 bob (1)
+walk location18 location19 bob (1)
+pickup_spanner location19 spanner92 bob (1)
+pickup_spanner location19 spanner67 bob (1)
+pickup_spanner location19 spanner66 bob (1)
+pickup_spanner location19 spanner21 bob (1)
+pickup_spanner location19 spanner115 bob (1)
+walk location19 location20 bob (1)
+pickup_spanner location20 spanner9 bob (1)
+pickup_spanner location20 spanner57 bob (1)
+walk location20 location21 bob (1)
+pickup_spanner location21 spanner128 bob (1)
+walk location21 location22 bob (1)
+pickup_spanner location22 spanner17 bob (1)
+walk location22 location23 bob (1)
+pickup_spanner location23 spanner18 bob (1)
+pickup_spanner location23 spanner100 bob (1)
+walk location23 location24 bob (1)
+pickup_spanner location24 spanner106 bob (1)
+walk location24 location25 bob (1)
+walk location25 location26 bob (1)
+walk location26 location27 bob (1)
+walk location27 location28 bob (1)
+pickup_spanner location28 spanner125 bob (1)
+walk location28 location29 bob (1)
+pickup_spanner location29 spanner133 bob (1)
+pickup_spanner location29 spanner117 bob (1)
+walk location29 location30 bob (1)
+pickup_spanner location30 spanner62 bob (1)
+pickup_spanner location30 spanner124 bob (1)
+pickup_spanner location30 spanner114 bob (1)
+walk location30 location31 bob (1)
+pickup_spanner location31 spanner74 bob (1)
+pickup_spanner location31 spanner56 bob (1)
+walk location31 location32 bob (1)
+pickup_spanner location32 spanner53 bob (1)
+pickup_spanner location32 spanner123 bob (1)
+walk location32 location33 bob (1)
+walk location33 location34 bob (1)
+pickup_spanner location34 spanner94 bob (1)
+pickup_spanner location34 spanner43 bob (1)
+walk location34 location35 bob (1)
+pickup_spanner location35 spanner77 bob (1)
+pickup_spanner location35 spanner73 bob (1)
+pickup_spanner location35 spanner54 bob (1)
+walk location35 location36 bob (1)
+pickup_spanner location36 spanner48 bob (1)
+pickup_spanner location36 spanner26 bob (1)
+pickup_spanner location36 spanner1 bob (1)
+walk location36 location37 bob (1)
+pickup_spanner location37 spanner37 bob (1)
+pickup_spanner location37 spanner23 bob (1)
+walk location37 location38 bob (1)
+pickup_spanner location38 spanner109 bob (1)
+walk location38 location39 bob (1)
+walk location39 location40 bob (1)
+pickup_spanner location40 spanner78 bob (1)
+pickup_spanner location40 spanner52 bob (1)
+pickup_spanner location40 spanner28 bob (1)
+walk location40 location41 bob (1)
+pickup_spanner location41 spanner130 bob (1)
+walk location41 location42 bob (1)
+walk location42 location43 bob (1)
+pickup_spanner location43 spanner140 bob (1)
+walk location43 location44 bob (1)
+pickup_spanner location44 spanner120 bob (1)
+walk location44 location45 bob (1)
+walk location45 location46 bob (1)
+pickup_spanner location46 spanner71 bob (1)
+walk location46 location47 bob (1)
+pickup_spanner location47 spanner65 bob (1)
+walk location47 location48 bob (1)
+pickup_spanner location48 spanner55 bob (1)
+pickup_spanner location48 spanner136 bob (1)
+walk location48 location49 bob (1)
+walk location49 location50 bob (1)
+pickup_spanner location50 spanner34 bob (1)
+walk location50 location51 bob (1)
+pickup_spanner location51 spanner7 bob (1)
+walk location51 location52 bob (1)
+pickup_spanner location52 spanner50 bob (1)
+walk location52 location53 bob (1)
+pickup_spanner location53 spanner44 bob (1)
+pickup_spanner location53 spanner32 bob (1)
+pickup_spanner location53 spanner19 bob (1)
+pickup_spanner location53 spanner134 bob (1)
+walk location53 location54 bob (1)
+pickup_spanner location54 spanner87 bob (1)
+pickup_spanner location54 spanner131 bob (1)
+walk location54 location55 bob (1)
+pickup_spanner location55 spanner84 bob (1)
+walk location55 location56 bob (1)
+pickup_spanner location56 spanner27 bob (1)
+pickup_spanner location56 spanner107 bob (1)
+walk location56 location57 bob (1)
+pickup_spanner location57 spanner38 bob (1)
+pickup_spanner location57 spanner112 bob (1)
+walk location57 location58 bob (1)
+pickup_spanner location58 spanner96 bob (1)
+pickup_spanner location58 spanner83 bob (1)
+walk location58 location59 bob (1)
+pickup_spanner location59 spanner81 bob (1)
+pickup_spanner location59 spanner49 bob (1)
+pickup_spanner location59 spanner46 bob (1)
+pickup_spanner location59 spanner33 bob (1)
+pickup_spanner location59 spanner126 bob (1)
+pickup_spanner location59 spanner122 bob (1)
+walk location59 location60 bob (1)
+pickup_spanner location60 spanner13 bob (1)
+walk location60 location61 bob (1)
+pickup_spanner location61 spanner16 bob (1)
+pickup_spanner location61 spanner139 bob (1)
+pickup_spanner location61 spanner138 bob (1)
+walk location61 location62 bob (1)
+pickup_spanner location62 spanner82 bob (1)
+walk location62 location63 bob (1)
+pickup_spanner location63 spanner41 bob (1)
+pickup_spanner location63 spanner108 bob (1)
+walk location63 location64 bob (1)
+pickup_spanner location64 spanner69 bob (1)
+pickup_spanner location64 spanner60 bob (1)
+pickup_spanner location64 spanner58 bob (1)
+pickup_spanner location64 spanner29 bob (1)
+pickup_spanner location64 spanner135 bob (1)
+walk location64 location65 bob (1)
+pickup_spanner location65 spanner102 bob (1)
+walk location65 location66 bob (1)
+pickup_spanner location66 spanner97 bob (1)
+pickup_spanner location66 spanner86 bob (1)
+pickup_spanner location66 spanner47 bob (1)
+walk location66 location67 bob (1)
+pickup_spanner location67 spanner14 bob (1)
+walk location67 location68 bob (1)
+pickup_spanner location68 spanner42 bob (1)
+walk location68 location69 bob (1)
+pickup_spanner location69 spanner45 bob (1)
+walk location69 location70 bob (1)
+pickup_spanner location70 spanner4 bob (1)
+walk location70 location71 bob (1)
+pickup_spanner location71 spanner39 bob (1)
+pickup_spanner location71 spanner2 bob (1)
+pickup_spanner location71 spanner127 bob (1)
+walk location71 location72 bob (1)
+walk location72 location73 bob (1)
+pickup_spanner location73 spanner103 bob (1)
+walk location73 location74 bob (1)
+pickup_spanner location74 spanner98 bob (1)
+pickup_spanner location74 spanner3 bob (1)
+walk location74 location75 bob (1)
+pickup_spanner location75 spanner22 bob (1)
+pickup_spanner location75 spanner121 bob (1)
+pickup_spanner location75 spanner116 bob (1)
+walk location75 location76 bob (1)
+pickup_spanner location76 spanner59 bob (1)
+pickup_spanner location76 spanner12 bob (1)
+walk location76 location77 bob (1)
+walk location77 location78 bob (1)
+walk location78 location79 bob (1)
+pickup_spanner location79 spanner61 bob (1)
+pickup_spanner location79 spanner36 bob (1)
+pickup_spanner location79 spanner24 bob (1)
+walk location79 location80 bob (1)
+pickup_spanner location80 spanner25 bob (1)
+pickup_spanner location80 spanner118 bob (1)
+walk location80 location81 bob (1)
+pickup_spanner location81 spanner95 bob (1)
+pickup_spanner location81 spanner90 bob (1)
+pickup_spanner location81 spanner80 bob (1)
+pickup_spanner location81 spanner30 bob (1)
+walk location81 location82 bob (1)
+pickup_spanner location82 spanner93 bob (1)
+walk location82 location83 bob (1)
+pickup_spanner location83 spanner88 bob (1)
+pickup_spanner location83 spanner137 bob (1)
+walk location83 location84 bob (1)
+pickup_spanner location84 spanner79 bob (1)
+walk location84 location85 bob (1)
+pickup_spanner location85 spanner76 bob (1)
+pickup_spanner location85 spanner35 bob (1)
+walk location85 location86 bob (1)
+pickup_spanner location86 spanner6 bob (1)
+pickup_spanner location86 spanner15 bob (1)
+pickup_spanner location86 spanner105 bob (1)
+walk location86 location87 bob (1)
+pickup_spanner location87 spanner113 bob (1)
+walk location87 location88 bob (1)
+pickup_spanner location88 spanner70 bob (1)
+pickup_spanner location88 spanner51 bob (1)
+pickup_spanner location88 spanner104 bob (1)
+walk location88 location89 bob (1)
+pickup_spanner location89 spanner63 bob (1)
+walk location89 location90 bob (1)
+walk location90 gate bob (1)
+tighten_nut gate spanner99 bob nut99 (1)
+tighten_nut gate spanner98 bob nut98 (1)
+tighten_nut gate spanner97 bob nut97 (1)
+tighten_nut gate spanner96 bob nut96 (1)
+tighten_nut gate spanner95 bob nut95 (1)
+tighten_nut gate spanner94 bob nut94 (1)
+tighten_nut gate spanner93 bob nut93 (1)
+tighten_nut gate spanner92 bob nut92 (1)
+tighten_nut gate spanner91 bob nut91 (1)
+tighten_nut gate spanner90 bob nut90 (1)
+tighten_nut gate spanner9 bob nut9 (1)
+tighten_nut gate spanner89 bob nut89 (1)
+tighten_nut gate spanner88 bob nut88 (1)
+tighten_nut gate spanner87 bob nut87 (1)
+tighten_nut gate spanner86 bob nut86 (1)
+tighten_nut gate spanner85 bob nut85 (1)
+tighten_nut gate spanner84 bob nut84 (1)
+tighten_nut gate spanner83 bob nut83 (1)
+tighten_nut gate spanner82 bob nut82 (1)
+tighten_nut gate spanner81 bob nut81 (1)
+tighten_nut gate spanner80 bob nut80 (1)
+tighten_nut gate spanner8 bob nut8 (1)
+tighten_nut gate spanner79 bob nut79 (1)
+tighten_nut gate spanner78 bob nut78 (1)
+tighten_nut gate spanner77 bob nut77 (1)
+tighten_nut gate spanner76 bob nut76 (1)
+tighten_nut gate spanner75 bob nut75 (1)
+tighten_nut gate spanner74 bob nut74 (1)
+tighten_nut gate spanner73 bob nut73 (1)
+tighten_nut gate spanner72 bob nut72 (1)
+tighten_nut gate spanner71 bob nut71 (1)
+tighten_nut gate spanner70 bob nut70 (1)
+tighten_nut gate spanner7 bob nut7 (1)
+tighten_nut gate spanner69 bob nut69 (1)
+tighten_nut gate spanner68 bob nut68 (1)
+tighten_nut gate spanner67 bob nut67 (1)
+tighten_nut gate spanner66 bob nut66 (1)
+tighten_nut gate spanner65 bob nut65 (1)
+tighten_nut gate spanner64 bob nut64 (1)
+tighten_nut gate spanner63 bob nut63 (1)
+tighten_nut gate spanner62 bob nut62 (1)
+tighten_nut gate spanner61 bob nut61 (1)
+tighten_nut gate spanner60 bob nut60 (1)
+tighten_nut gate spanner6 bob nut6 (1)
+tighten_nut gate spanner59 bob nut59 (1)
+tighten_nut gate spanner58 bob nut58 (1)
+tighten_nut gate spanner57 bob nut57 (1)
+tighten_nut gate spanner56 bob nut56 (1)
+tighten_nut gate spanner55 bob nut55 (1)
+tighten_nut gate spanner54 bob nut54 (1)
+tighten_nut gate spanner53 bob nut53 (1)
+tighten_nut gate spanner52 bob nut52 (1)
+tighten_nut gate spanner51 bob nut51 (1)
+tighten_nut gate spanner50 bob nut50 (1)
+tighten_nut gate spanner5 bob nut5 (1)
+tighten_nut gate spanner49 bob nut49 (1)
+tighten_nut gate spanner48 bob nut48 (1)
+tighten_nut gate spanner47 bob nut47 (1)
+tighten_nut gate spanner46 bob nut46 (1)
+tighten_nut gate spanner45 bob nut45 (1)
+tighten_nut gate spanner44 bob nut44 (1)
+tighten_nut gate spanner43 bob nut43 (1)
+tighten_nut gate spanner42 bob nut42 (1)
+tighten_nut gate spanner41 bob nut41 (1)
+tighten_nut gate spanner40 bob nut40 (1)
+tighten_nut gate spanner4 bob nut4 (1)
+tighten_nut gate spanner39 bob nut39 (1)
+tighten_nut gate spanner38 bob nut38 (1)
+tighten_nut gate spanner37 bob nut37 (1)
+tighten_nut gate spanner36 bob nut36 (1)
+tighten_nut gate spanner35 bob nut35 (1)
+tighten_nut gate spanner34 bob nut34 (1)
+tighten_nut gate spanner33 bob nut33 (1)
+tighten_nut gate spanner32 bob nut32 (1)
+tighten_nut gate spanner31 bob nut31 (1)
+tighten_nut gate spanner30 bob nut30 (1)
+tighten_nut gate spanner3 bob nut3 (1)
+tighten_nut gate spanner29 bob nut29 (1)
+tighten_nut gate spanner28 bob nut28 (1)
+tighten_nut gate spanner27 bob nut27 (1)
+tighten_nut gate spanner26 bob nut26 (1)
+tighten_nut gate spanner25 bob nut25 (1)
+tighten_nut gate spanner24 bob nut24 (1)
+tighten_nut gate spanner23 bob nut23 (1)
+tighten_nut gate spanner22 bob nut22 (1)
+tighten_nut gate spanner21 bob nut21 (1)
+tighten_nut gate spanner20 bob nut20 (1)
+tighten_nut gate spanner2 bob nut2 (1)
+tighten_nut gate spanner19 bob nut19 (1)
+tighten_nut gate spanner18 bob nut18 (1)
+tighten_nut gate spanner17 bob nut17 (1)
+tighten_nut gate spanner16 bob nut16 (1)
+tighten_nut gate spanner15 bob nut15 (1)
+tighten_nut gate spanner140 bob nut140 (1)
+tighten_nut gate spanner14 bob nut14 (1)
+tighten_nut gate spanner139 bob nut139 (1)
+tighten_nut gate spanner138 bob nut138 (1)
+tighten_nut gate spanner137 bob nut137 (1)
+tighten_nut gate spanner136 bob nut136 (1)
+tighten_nut gate spanner135 bob nut135 (1)
+tighten_nut gate spanner134 bob nut134 (1)
+tighten_nut gate spanner133 bob nut133 (1)
+tighten_nut gate spanner132 bob nut132 (1)
+tighten_nut gate spanner131 bob nut131 (1)
+tighten_nut gate spanner130 bob nut130 (1)
+tighten_nut gate spanner13 bob nut13 (1)
+tighten_nut gate spanner129 bob nut129 (1)
+tighten_nut gate spanner128 bob nut128 (1)
+tighten_nut gate spanner127 bob nut127 (1)
+tighten_nut gate spanner126 bob nut126 (1)
+tighten_nut gate spanner125 bob nut125 (1)
+tighten_nut gate spanner124 bob nut124 (1)
+tighten_nut gate spanner123 bob nut123 (1)
+tighten_nut gate spanner122 bob nut122 (1)
+tighten_nut gate spanner121 bob nut121 (1)
+tighten_nut gate spanner120 bob nut120 (1)
+tighten_nut gate spanner12 bob nut12 (1)
+tighten_nut gate spanner119 bob nut119 (1)
+tighten_nut gate spanner118 bob nut118 (1)
+tighten_nut gate spanner117 bob nut117 (1)
+tighten_nut gate spanner116 bob nut116 (1)
+tighten_nut gate spanner115 bob nut115 (1)
+tighten_nut gate spanner114 bob nut114 (1)
+tighten_nut gate spanner113 bob nut113 (1)
+tighten_nut gate spanner112 bob nut112 (1)
+tighten_nut gate spanner111 bob nut111 (1)
+tighten_nut gate spanner110 bob nut110 (1)
+tighten_nut gate spanner11 bob nut11 (1)
+tighten_nut gate spanner109 bob nut109 (1)
+tighten_nut gate spanner108 bob nut108 (1)
+tighten_nut gate spanner107 bob nut107 (1)
+tighten_nut gate spanner106 bob nut106 (1)
+tighten_nut gate spanner105 bob nut105 (1)
+tighten_nut gate spanner104 bob nut104 (1)
+tighten_nut gate spanner103 bob nut103 (1)
+tighten_nut gate spanner102 bob nut102 (1)
+tighten_nut gate spanner101 bob nut101 (1)
+tighten_nut gate spanner100 bob nut100 (1)
+tighten_nut gate spanner10 bob nut10 (1)
+tighten_nut gate spanner1 bob nut1 (1)
+[t=10.440726s, 104568 KB] Plan length: 371 step(s).
+[t=10.440726s, 104568 KB] Plan cost: 371
+[t=10.440726s, 104568 KB] Expanded 372 state(s).
+[t=10.440726s, 104568 KB] Reopened 0 state(s).
+[t=10.440726s, 104568 KB] Evaluated 924970 state(s).
+[t=10.440726s, 104568 KB] Evaluations: 924970
+[t=10.440726s, 104568 KB] Generated 924969 state(s).
+[t=10.440726s, 104568 KB] Dead ends: 914620 state(s).
+[t=10.440726s, 104568 KB] Number of registered states: 924970
+[t=10.440726s, 104568 KB] Int hash set load factor: 924970/2097152 = 0.441060
+[t=10.440726s, 104568 KB] Int hash set resizes: 21
+[t=10.440726s, 104568 KB] Search time: 4.408321s
+[t=10.440726s, 104568 KB] Total time: 10.440726s
+Solution found.
+Peak memory: 104568 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 15.24s

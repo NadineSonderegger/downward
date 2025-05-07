@@ -1,0 +1,222 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/logistics98/domain.pddl downward-benchmarks/logistics98/prob07.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 51 rules.
+Computing model... [0.030s CPU, 0.027s wall-clock]
+3222 relevant atoms
+1982 auxiliary atoms
+5204 final queue length
+7283 total queue pushes
+Completing instantiation... [0.040s CPU, 0.042s wall-clock]
+Instantiating: [0.070s CPU, 0.075s wall-clock]
+Computing fact groups...
+Finding invariants...
+6 initial candidates
+Finding invariants: [0.000s CPU, 0.001s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.010s CPU, 0.002s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.007s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.000s CPU, 0.003s wall-clock]
+Translating task: [0.040s CPU, 0.045s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+27 propositions removed
+Detecting unreachable propositions: [0.040s CPU, 0.031s wall-clock]
+Reordering and filtering variables...
+23 of 27 variables necessary.
+0 of 27 mutex groups necessary.
+1738 of 2442 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.005s wall-clock]
+Translator variables: 23
+Translator derived variables: 0
+Translator facts: 322
+Translator goal facts: 6
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 1738
+Translator axioms: 0
+Translator task size: 6621
+Translator peak memory: 37468 KB
+Writing output... [0.010s CPU, 0.009s wall-clock]
+Done! [0.190s CPU, 0.180s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/nadso/thesis/downward/builds/release/bin/downward --search 'eager_greedy([logistics_heuristic()])' --internal-plan-file sas_plan < output.sas
+[t=0.000178s, 10892 KB] reading input...
+[t=0.006760s, 11312 KB] done reading input!
+[t=19.687370s, 11724 KB] Building successor generator...done!
+[t=19.688356s, 11856 KB] peak memory difference for successor generator creation: 132 KB
+[t=19.688385s, 11856 KB] time for successor generation creation: 0.000773s
+[t=19.688424s, 11856 KB] Variables: 23
+[t=19.688455s, 11856 KB] FactPairs: 322
+[t=19.688479s, 11856 KB] Bytes per state: 12
+[t=19.688520s, 11856 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+[t=19.688591s, 11856 KB] New best heuristic value for logistics heuristic: 50
+[t=19.688620s, 11856 KB] g=0, 1 evaluated, 0 expanded
+[t=19.688648s, 11856 KB] Initial heuristic value for logistics heuristic: 50
+[t=19.688673s, 11856 KB] pruning method: none
+[t=19.688797s, 11856 KB] New best heuristic value for logistics heuristic: 49
+[t=19.688825s, 11856 KB] g=1, 8 evaluated, 1 expanded
+[t=19.689170s, 11856 KB] New best heuristic value for logistics heuristic: 48
+[t=19.689198s, 11856 KB] g=1, 34 evaluated, 1 expanded
+[t=19.689837s, 11856 KB] New best heuristic value for logistics heuristic: 47
+[t=19.689877s, 11856 KB] g=2, 84 evaluated, 2 expanded
+[t=19.690349s, 11856 KB] New best heuristic value for logistics heuristic: 46
+[t=19.690387s, 11856 KB] g=2, 120 evaluated, 2 expanded
+[t=19.690881s, 11856 KB] New best heuristic value for logistics heuristic: 45
+[t=19.690908s, 11856 KB] g=3, 159 evaluated, 3 expanded
+[t=19.691342s, 11856 KB] New best heuristic value for logistics heuristic: 44
+[t=19.691369s, 11856 KB] g=3, 195 evaluated, 3 expanded
+[t=19.691856s, 11856 KB] New best heuristic value for logistics heuristic: 43
+[t=19.691894s, 11856 KB] g=4, 233 evaluated, 4 expanded
+[t=19.692783s, 11856 KB] New best heuristic value for logistics heuristic: 42
+[t=19.692813s, 11856 KB] g=5, 306 evaluated, 5 expanded
+[t=19.693741s, 11856 KB] New best heuristic value for logistics heuristic: 41
+[t=19.693783s, 11856 KB] g=6, 380 evaluated, 6 expanded
+[t=19.694993s, 11856 KB] New best heuristic value for logistics heuristic: 40
+[t=19.695032s, 11856 KB] g=7, 480 evaluated, 7 expanded
+[t=19.695902s, 11856 KB] New best heuristic value for logistics heuristic: 35
+[t=19.695941s, 11856 KB] g=8, 546 evaluated, 8 expanded
+[t=19.696914s, 11856 KB] New best heuristic value for logistics heuristic: 34
+[t=19.696943s, 11856 KB] g=9, 628 evaluated, 9 expanded
+[t=19.697774s, 11856 KB] New best heuristic value for logistics heuristic: 33
+[t=19.697802s, 11856 KB] g=10, 698 evaluated, 10 expanded
+[t=19.698295s, 11856 KB] New best heuristic value for logistics heuristic: 32
+[t=19.698333s, 11856 KB] g=11, 736 evaluated, 11 expanded
+[t=19.699239s, 11856 KB] New best heuristic value for logistics heuristic: 31
+[t=19.699277s, 11856 KB] g=12, 812 evaluated, 12 expanded
+[t=19.700188s, 11856 KB] New best heuristic value for logistics heuristic: 30
+[t=19.700226s, 11856 KB] g=13, 888 evaluated, 13 expanded
+[t=19.701165s, 11856 KB] New best heuristic value for logistics heuristic: 29
+[t=19.701204s, 11856 KB] g=14, 964 evaluated, 14 expanded
+[t=19.702638s, 11856 KB] New best heuristic value for logistics heuristic: 28
+[t=19.702678s, 11856 KB] g=15, 1078 evaluated, 15 expanded
+[t=19.703492s, 11856 KB] New best heuristic value for logistics heuristic: 27
+[t=19.703544s, 11856 KB] g=16, 1146 evaluated, 16 expanded
+[t=19.703988s, 11856 KB] New best heuristic value for logistics heuristic: 26
+[t=19.704026s, 11856 KB] g=17, 1179 evaluated, 17 expanded
+[t=19.704947s, 11856 KB] New best heuristic value for logistics heuristic: 25
+[t=19.704975s, 11856 KB] g=18, 1259 evaluated, 18 expanded
+[t=19.705880s, 11856 KB] New best heuristic value for logistics heuristic: 24
+[t=19.705939s, 11856 KB] g=19, 1338 evaluated, 19 expanded
+[t=19.706844s, 11856 KB] New best heuristic value for logistics heuristic: 23
+[t=19.706877s, 11856 KB] g=20, 1416 evaluated, 20 expanded
+[t=19.708636s, 11856 KB] New best heuristic value for logistics heuristic: 22
+[t=19.708679s, 11856 KB] g=21, 1569 evaluated, 21 expanded
+[t=19.709447s, 11856 KB] New best heuristic value for logistics heuristic: 20
+[t=19.709475s, 11856 KB] g=22, 1636 evaluated, 22 expanded
+[t=19.710388s, 11856 KB] New best heuristic value for logistics heuristic: 19
+[t=19.710426s, 11856 KB] g=23, 1713 evaluated, 23 expanded
+[t=19.710470s, 11856 KB] New best heuristic value for logistics heuristic: 15
+[t=19.710497s, 11856 KB] g=23, 1714 evaluated, 23 expanded
+[t=19.711382s, 11856 KB] New best heuristic value for logistics heuristic: 14
+[t=19.711410s, 11856 KB] g=24, 1792 evaluated, 24 expanded
+[t=19.712211s, 11856 KB] New best heuristic value for logistics heuristic: 13
+[t=19.712249s, 11856 KB] g=25, 1860 evaluated, 25 expanded
+[t=19.713171s, 11856 KB] New best heuristic value for logistics heuristic: 8
+[t=19.713210s, 11856 KB] g=26, 1937 evaluated, 26 expanded
+[t=19.714063s, 11856 KB] New best heuristic value for logistics heuristic: 7
+[t=19.714101s, 11856 KB] g=27, 2009 evaluated, 27 expanded
+[t=19.715141s, 11988 KB] New best heuristic value for logistics heuristic: 6
+[t=19.715195s, 11988 KB] g=28, 2082 evaluated, 28 expanded
+[t=19.716072s, 11988 KB] New best heuristic value for logistics heuristic: 5
+[t=19.716110s, 11988 KB] g=29, 2156 evaluated, 29 expanded
+[t=19.716927s, 11988 KB] New best heuristic value for logistics heuristic: 4
+[t=19.716965s, 11988 KB] g=30, 2225 evaluated, 30 expanded
+[t=19.717046s, 11988 KB] New best heuristic value for logistics heuristic: 3
+[t=19.717073s, 11988 KB] g=31, 2229 evaluated, 31 expanded
+[t=19.717927s, 11988 KB] New best heuristic value for logistics heuristic: 2
+[t=19.717955s, 11988 KB] g=32, 2305 evaluated, 32 expanded
+[t=19.718843s, 11988 KB] New best heuristic value for logistics heuristic: 1
+[t=19.718875s, 11988 KB] g=33, 2381 evaluated, 33 expanded
+[t=19.719732s, 11988 KB] New best heuristic value for logistics heuristic: 0
+[t=19.719760s, 11988 KB] g=34, 2457 evaluated, 34 expanded
+[t=19.720590s, 11988 KB] Solution found!
+[t=19.720630s, 11988 KB] Actual search time: 0.031954s
+load-airplane package9 plane5 city5-2 (1)
+load-airplane package7 plane4 city6-2 (1)
+load-airplane package10 plane4 city6-2 (1)
+load-truck package5 truck4 city4-1 (1)
+drive-truck truck4 city4-1 city4-2 city4 (1)
+unload-truck package5 truck4 city4-2 (1)
+fly-airplane plane5 city5-2 city9-2 (1)
+unload-airplane package9 plane5 city9-2 (1)
+fly-airplane plane4 city6-2 city5-2 (1)
+unload-airplane package7 plane4 city5-2 (1)
+drive-truck truck5 city5-1 city5-2 city5 (1)
+load-truck package7 truck5 city5-2 (1)
+drive-truck truck5 city5-2 city5-1 city5 (1)
+unload-truck package7 truck5 city5-1 (1)
+fly-airplane plane4 city5-2 city9-2 (1)
+unload-airplane package10 plane4 city9-2 (1)
+drive-truck truck9 city9-1 city9-2 city9 (1)
+load-truck package10 truck9 city9-2 (1)
+drive-truck truck9 city9-2 city9-1 city9 (1)
+unload-truck package10 truck9 city9-1 (1)
+load-airplane package6 plane1 city1-2 (1)
+fly-airplane plane1 city1-2 city10-2 (1)
+unload-airplane package6 plane1 city10-2 (1)
+load-airplane package8 plane1 city10-2 (1)
+fly-airplane plane1 city10-2 city1-2 (1)
+unload-airplane package8 plane1 city1-2 (1)
+fly-airplane plane1 city1-2 city4-2 (1)
+load-airplane package5 plane1 city4-2 (1)
+fly-airplane plane1 city4-2 city7-2 (1)
+unload-airplane package5 plane1 city7-2 (1)
+drive-truck truck7 city7-1 city7-2 city7 (1)
+load-truck package5 truck7 city7-2 (1)
+drive-truck truck7 city7-2 city7-1 city7 (1)
+unload-truck package5 truck7 city7-1 (1)
+[t=19.720660s, 11988 KB] Plan length: 34 step(s).
+[t=19.720660s, 11988 KB] Plan cost: 34
+[t=19.720660s, 11988 KB] Expanded 35 state(s).
+[t=19.720660s, 11988 KB] Reopened 0 state(s).
+[t=19.720660s, 11988 KB] Evaluated 2529 state(s).
+[t=19.720660s, 11988 KB] Evaluations: 2529
+[t=19.720660s, 11988 KB] Generated 2635 state(s).
+[t=19.720660s, 11988 KB] Dead ends: 0 state(s).
+[t=19.720660s, 11988 KB] Number of registered states: 2529
+[t=19.720660s, 11988 KB] Int hash set load factor: 2529/4096 = 0.617432
+[t=19.720660s, 11988 KB] Int hash set resizes: 12
+[t=19.720660s, 11988 KB] Search time: 0.032140s
+[t=19.720660s, 11988 KB] Total time: 19.720660s
+Solution found.
+Peak memory: 11988 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 20.05s

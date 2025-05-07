@@ -2,11 +2,9 @@
 
 #include "../task_proxy.h"
 
-#include "../utils/collections.h"
 #include "../utils/hash.h"
 #include "../utils/logging.h"
 
-#include <cmath>
 #include <limits>
 
 using namespace std;
@@ -22,7 +20,6 @@ int PotentialFunctionFeatures::get_value(const State &state) const {
 
 
     for (const auto &feature : feature_potentials) {
-        // cout << "considering feature " << feature.first << " with weight " << feature.second << endl;
         const vector<pair<int, int>> &feature_set = feature.first;
         bool all_in_state = true;
 
@@ -36,17 +33,19 @@ int PotentialFunctionFeatures::get_value(const State &state) const {
         }
         
         if (all_in_state) {
-            if (feature.second == std::numeric_limits<int>::max())
+            if (feature.second == numeric_limits<int>::max())
             {
-                return std::numeric_limits<int>::max();
+                return numeric_limits<int>::max();
             }
-            // cout << "  is in state" << endl;
+             //cout << "considering feature " << feature.first << " with weight " << feature.second << endl;
+             //cout << "  is in state" << endl;
             heuristic_value += feature.second;
         }
         else{
-            // cout << "  is not in state" << endl;
+             // cout << "  is not in state" << endl;
         }
     }
+    //cout << "new state" << endl;
     return heuristic_value;
 }
 }

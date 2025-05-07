@@ -23,7 +23,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
 
             smatch match;
 
-            if (regex_search(fact_name, match, regex(R"(at\(agent, location(\d+)\))"))) { // agent at location i
+            /* if (regex_search(fact_name, match, regex(R"(at\(agent, location(\d+)\))"))) { // agent at location i
 
                 int agent_location = stoi(match[1].str());  
                 feature_potentials[{{var.get_id(), value}}] = var.get_domain_size() - agent_location; // = m-i
@@ -37,12 +37,54 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                             int spanner_location = stoi(spanner_match[1].str());  
         
                             if (spanner_location < agent_location) {  // condition: k < i
-                                feature_potentials[{{var_id, value}, {other_var.get_id(), spanner_value}}] = std::numeric_limits<int>::max();
+                                feature_potentials[{{var_id, value}, {other_var.get_id(), spanner_value}}] = numeric_limits<int>::max();
                             }
                         }
                     }
                 }   
-            } 
+            } */
+
+            if (regex_search(fact_name, match, regex(R"(at\(agent, ([a-zA-Z]+)(\d*)\))"))) { // agent at some location
+                string loc_name = match[1].str(); // place name
+                string loc_number_str = match[2].str(); // number
+                
+                int agent_location = -1;
+                if (loc_name == "shed") {
+                    agent_location = 0;
+                } else if (loc_name == "gate") {
+                    agent_location = var.get_domain_size(); // gate = m
+                } else if (loc_name == "location" && !loc_number_str.empty()) {
+                    agent_location = stoi(loc_number_str); // locationX = X
+                }
+            
+                feature_potentials[{{var.get_id(), value}}] = var.get_domain_size() - agent_location; // = m - i
+            
+                for (VariableProxy other_var : variables) {
+                    for (int spanner_value = 0; spanner_value < other_var.get_domain_size(); ++spanner_value) {
+                        string spanner_fact = other_var.get_fact(spanner_value).get_name();
+                        smatch spanner_match;
+            
+                        if (regex_search(spanner_fact, spanner_match, regex(R"(at\(spanner\d+, ([a-zA-Z]+)(\d*)\))"))) {
+                            string spanner_loc_name = spanner_match[1].str();
+                            string spanner_num_str = spanner_match[2].str();
+            
+                            int spanner_location = -1;
+                            if (spanner_loc_name == "shed") {
+                                spanner_location = 0;
+                            } else if (spanner_loc_name == "gate") {
+                                spanner_location = var.get_domain_size(); // m
+                            } else if (spanner_loc_name == "location" && !spanner_num_str.empty()) {
+                                spanner_location = stoi(spanner_num_str);
+                            }
+            
+                            if (spanner_location < agent_location) {  // condition: k < i
+                                feature_potentials[{{var.get_id(), value}, {other_var.get_id(), spanner_value}}] = numeric_limits<int>::max();
+                            }
+                        }
+                    }
+                }
+            }
+
             else if (regex_search(fact_name, match, regex(R"(at\(spanner\d+, location\d+\))"))) { // spanner at location 
                 feature_potentials[{{var_id, value}}] = 1;
             }
@@ -57,7 +99,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                         if (regex_search(other_fact_name, other_match, regex(R"(NegatedAtom useable\(spanner(\d+)\))"))) {
                             int spanner_id = stoi(other_match[1].str());  // extract spanner number
                             if (nut_id == spanner_id) {  // ensure numbers match
-                                feature_potentials[{{var_id, value}, {other_var.get_id(), other_value}}] = std::numeric_limits<int>::max();
+                                feature_potentials[{{var_id, value}, {other_var.get_id(), other_value}}] = numeric_limits<int>::max();
                             }
                         }
                     }
