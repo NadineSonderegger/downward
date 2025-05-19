@@ -1,5 +1,5 @@
-#ifndef POTENTIALS_POTENTIAL_FUNCTION_H
-#define POTENTIALS_POTENTIAL_FUNCTION_H
+#ifndef POTENTIALS_POTENTIAL_FUNCTION__FEATURES_H
+#define POTENTIALS_POTENTIAL_FUNCTION__FEATURES_H
 
 #include <vector>
 #include "../utils/hash.h"
@@ -14,7 +14,7 @@ namespace potentials {
   overhead that is induced by evaluating heuristics whenever possible.
 */
 class PotentialFunctionFeatures {
-    const utils::HashMap<std::vector<std::pair<int, int>>, int> feature_potentials;
+    std::vector<std::pair<std::vector<std::pair<int, int>>, int>> feature_potentials;
 
 public:
     explicit PotentialFunctionFeatures(

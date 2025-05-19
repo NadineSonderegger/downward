@@ -15,6 +15,11 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
     VariablesProxy variables = task_proxy.get_variables();
     utils::HashMap<vector<pair<int, int>>, int> feature_potentials;
 
+    regex agent_at(R"(at\(agent, ([a-zA-Z]+)(\d*)\))");
+    regex spanner_at(R"(at\(spanner\d+, ([a-zA-Z]+)(\d*)\))");
+    regex nut_loose(R"(loose\(nut(\d+)\))");
+    regex spanner_not_usable(R"(NegatedAtom useable\(spanner(\d+)\))");
+
     for (VariableProxy var : variables) {
         int var_id = var.get_id();
 
@@ -23,28 +28,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
 
             smatch match;
 
-            /* if (regex_search(fact_name, match, regex(R"(at\(agent, location(\d+)\))"))) { // agent at location i
-
-                int agent_location = stoi(match[1].str());  
-                feature_potentials[{{var.get_id(), value}}] = var.get_domain_size() - agent_location; // = m-i
-
-                for (VariableProxy other_var : variables) {
-                    for (int spanner_value = 0; spanner_value < other_var.get_domain_size(); ++spanner_value) {
-                        string spanner_fact = other_var.get_fact(spanner_value).get_name();
-                        smatch spanner_match;
-    
-                        if (regex_search(spanner_fact, spanner_match, regex(R"(at\(spanner\d+, location(\d+)\))"))) {
-                            int spanner_location = stoi(spanner_match[1].str());  
-        
-                            if (spanner_location < agent_location) {  // condition: k < i
-                                feature_potentials[{{var_id, value}, {other_var.get_id(), spanner_value}}] = numeric_limits<int>::max();
-                            }
-                        }
-                    }
-                }   
-            } */
-
-            if (regex_search(fact_name, match, regex(R"(at\(agent, ([a-zA-Z]+)(\d*)\))"))) { // agent at some location
+            if (regex_search(fact_name, match, agent_at)) { // agent at some location
                 string loc_name = match[1].str(); // place name
                 string loc_number_str = match[2].str(); // number
                 
@@ -64,7 +48,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                         string spanner_fact = other_var.get_fact(spanner_value).get_name();
                         smatch spanner_match;
             
-                        if (regex_search(spanner_fact, spanner_match, regex(R"(at\(spanner\d+, ([a-zA-Z]+)(\d*)\))"))) {
+                        if (regex_search(spanner_fact, spanner_match, spanner_at)) {
                             string spanner_loc_name = spanner_match[1].str();
                             string spanner_num_str = spanner_match[2].str();
             
@@ -85,10 +69,15 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                 }
             }
 
-            else if (regex_search(fact_name, match, regex(R"(at\(spanner\d+, location\d+\))"))) { // spanner at location 
-                feature_potentials[{{var_id, value}}] = 1;
+            else if (regex_search(fact_name, match, spanner_at)) { // spanner at location 
+                string spanner_loc_name = match[1].str();
+                string spanner_num_str = match[2].str();
+
+                if (spanner_loc_name == "shed" || spanner_loc_name == "gate" || spanner_loc_name == "location") {
+                    feature_potentials[{{var_id, value}}] = 1;
+                }
             }
-            else if (regex_search(fact_name, match, regex(R"(loose\(nut(\d+)\))"))) { // loose nut
+            else if (regex_search(fact_name, match, nut_loose)) { // loose nut
                 int nut_id = stoi(match[1].str());  // extract nut number
                 feature_potentials[{{var_id, value}}] = 1;
 
@@ -96,7 +85,7 @@ static unique_ptr<PotentialFunctionFeatures> create_spanner_potential_function(c
                     for (int other_value = 0; other_value < other_var.get_domain_size(); ++other_value) {
                         string other_fact_name = other_var.get_fact(other_value).get_name();
                         smatch other_match;
-                        if (regex_search(other_fact_name, other_match, regex(R"(NegatedAtom useable\(spanner(\d+)\))"))) {
+                        if (regex_search(other_fact_name, other_match, spanner_not_usable)) {
                             int spanner_id = stoi(other_match[1].str());  // extract spanner number
                             if (nut_id == spanner_id) {  // ensure numbers match
                                 feature_potentials[{{var_id, value}, {other_var.get_id(), other_value}}] = numeric_limits<int>::max();

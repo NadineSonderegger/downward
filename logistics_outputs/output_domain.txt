@@ -15,4 +15,4 @@ Got: ['domain', 'logistics-strips']
 translate exit code: 31
 
 Driver aborting after translate
-INFO     Planner time: 0.12s
+INFO     Planner time: 0.29s

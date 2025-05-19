@@ -1,0 +1,202 @@
+for (VariableProxy var : task_proxy.get_variables()) {
+    
+    for (int value = 0; value < var.get_domain_size(); ++value) {
+        string fact_name = var.get_fact(value).get_name();
+        smatch match;
+
+        if (fact_name.find("package") != string::npos){
+            break;
+        }
+
+        else if (regex_search(fact_name, match, plane_at)) {
+            int city_index = stoi(match[2].str());
+            int location_index = stoi(match[3].str());
+            airport_location_by_city[city_index] = location_index;
+        }
+
+        else if (regex_search(fact_name, match, truck_at)) {
+            int truck_id = stoi(match[1]);
+            int city_id = stoi(match[2]);
+            
+            // Assign only the first encountered truck per city
+            if (designated_truck_by_city[city_id] == -1) {
+                designated_truck_by_city[city_id] = truck_id;
+            }
+            break;
+        }
+    }
+}
+
+
+for (VariableProxy var : variables) {
+        for (VariableProxy other_var : variables) {
+
+            for (int value = 0; value < var.get_domain_size(); ++value) {
+                string fact_name = var.get_fact(value).get_name();
+                smatch match;
+
+                for (int other_val = 0; other_val < other_var.get_domain_size(); ++other_val) {
+                    string other_fact = other_var.get_fact(other_val).get_name();
+                    smatch other_match;
+
+                    // Package on the ground
+                    if (fact_name.find("package") != string::npos) {
+                        regex_search(fact_name, match, package_at_ground);
+                        int package = stoi(match[1]);
+                        int package_city = stoi(match[2]);
+                        int package_loc = stoi(match[3]);
+                        auto goal = package_goal_location.find(package);
+
+                        if (goal != package_goal_location.end()) {
+                            int goal_city = goal->second.first;
+                            int goal_loc = goal->second.second;
+
+                            if(package_city == goal_city && package_loc == goal_loc){
+                                continue;
+                            }
+
+                            if(package_city == goal_city){
+
+                                if (regex_search(other_fact, other_match, truck_at)) {
+                                    int truck_id = stoi(other_match[1]);
+                                    int truck_city = stoi(other_match[2]);
+                                    int truck_loc = stoi(other_match[3]);
+
+                                    if (truck_id != designated_truck_by_city[truck_city]) {
+                                        continue;
+                                    }
+                                    
+                                    if(truck_city == package_city && truck_loc == package_loc){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 3;
+                                    }
+                                    else if(truck_city == package_city){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 4;
+                                    }
+                                }
+                            }
+                            else if(airport_location_by_city[package_city] == package_loc){
+
+                                if (regex_search(other_fact, other_match, plane_at)) {
+                                    int plane_id = stoi(other_match[1]);
+                                    int plane_city = stoi(other_match[2]);
+
+                                    if(plane_id != 1){
+                                        continue;
+                                    }
+                                    
+                                    if(plane_city == package_city){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 7;
+                                    }
+                                    else{
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 8;
+                                    }
+                                }
+                            }
+                            else{
+                                if (regex_search(other_fact, other_match, truck_at)) {
+                                    int truck_id = stoi(other_match[1]);
+                                    int truck_city = stoi(other_match[2]);
+                                    int truck_loc = stoi(other_match[3]);
+
+                                    if (truck_id != designated_truck_by_city[truck_city]) {
+                                        continue;
+                                    }
+                                    
+                                    if(truck_city == package_city && truck_loc == package_loc){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 11;
+                                    }
+                                    else if(truck_city == package_city){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 12;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Package in truck
+                    else if (regex_search(fact_name, match, package_in_truck)) {
+                        int package = stoi(match[1]);
+                        int truck_id = stoi(match[2]);
+
+                        auto goal = package_goal_location.find(package);
+
+                        if (goal != package_goal_location.end()) {
+                            int goal_city = goal->second.first;
+                            int goal_loc = goal->second.second;
+
+                            if (regex_search(other_fact, other_match, truck_at)) {
+                                int truck = stoi(other_match[1]);
+                                int truck_city = stoi(other_match[2]);
+                                int truck_loc = stoi(other_match[3]);
+
+                                if(truck_id == truck){
+
+                                    if(truck_city == goal_city && truck_loc == goal_loc){
+                                        //cout << "truck has package and is at goal loc" << endl;
+                                        //cout << var.get_id() << value << other_var.get_id() << other_val << endl;
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 1;
+                                    }
+                                    else if(truck_city == goal_city){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 2;
+                                    }
+                                    else if(airport_location_by_city[truck_city] == truck_loc){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 9;
+                                    }
+                                    else{
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 10;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Package in plane
+                    else if (regex_search(fact_name, match, package_in_plane)) {
+                        int package = stoi(match[1]);
+                        int plane_id = stoi(match[2]);
+
+                        auto goal = package_goal_location.find(package);
+
+                        if (goal != package_goal_location.end()) {
+                            int goal_city = goal->second.first;
+
+                            if (regex_search(other_fact, other_match, plane_at)) {
+                                int plane = stoi(other_match[1]);
+                                int plane_city = stoi(other_match[2]);
+
+                                if(plane_id == plane){
+
+                                    if(plane_city == goal_city){
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 5;
+                                    }
+                                    else{
+                                        feature_potentials[{{var.get_id(), value}, {other_var.get_id(), other_val}}] = 6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    [t=12593.301451s, 129044 KB] Plan length: 283 step(s).
+[t=12593.301451s, 129044 KB] Plan cost: 283
+[t=12593.301451s, 129044 KB] Expanded 284 state(s).
+[t=12593.301451s, 129044 KB] Reopened 0 state(s).
+[t=12593.301451s, 129044 KB] Evaluated 409586 state(s).
+[t=12593.301451s, 129044 KB] Evaluations: 409586
+[t=12593.301451s, 129044 KB] Generated 411816 state(s).
+[t=12593.301451s, 129044 KB] Dead ends: 0 state(s).
+[t=12593.301451s, 129044 KB] Number of registered states: 409586
+[t=12593.301451s, 129044 KB] Int hash set load factor: 409586/524288 = 0.781223
+[t=12593.301451s, 129044 KB] Int hash set resizes: 19
+[t=12593.301451s, 129044 KB] Search time: 11837.836401s
+[t=12593.301451s, 129044 KB] Total time: 12593.301451s
+Solution found.
+Peak memory: 129044 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 12620.08s

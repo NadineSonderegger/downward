@@ -7,56 +7,56 @@ INFO     translator time limit: None
 INFO     translator memory limit: None
 INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/logistics98/domain.pddl downward-benchmarks/logistics98/prob14.pddl --sas-file output.sas
 Parsing...
-Parsing: [0.000s CPU, 0.006s wall-clock]
+Parsing: [0.010s CPU, 0.011s wall-clock]
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Instantiating...
-Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Generating Datalog program... [0.020s CPU, 0.005s wall-clock]
 Normalizing Datalog program...
-Normalizing Datalog program: [0.010s CPU, 0.003s wall-clock]
-Preparing model... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program: [0.000s CPU, 0.007s wall-clock]
+Preparing model... [0.010s CPU, 0.005s wall-clock]
 Generated 51 rules.
-Computing model... [0.170s CPU, 0.171s wall-clock]
+Computing model... [0.260s CPU, 0.273s wall-clock]
 14512 relevant atoms
 7164 auxiliary atoms
 21676 final queue length
 31057 total queue pushes
-Completing instantiation... [0.350s CPU, 0.353s wall-clock]
-Instantiating: [0.540s CPU, 0.541s wall-clock]
+Completing instantiation... [0.300s CPU, 0.315s wall-clock]
+Instantiating: [0.610s CPU, 0.611s wall-clock]
 Computing fact groups...
 Finding invariants...
 6 initial candidates
-Finding invariants: [0.010s CPU, 0.003s wall-clock]
+Finding invariants: [0.020s CPU, 0.003s wall-clock]
 Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
-Instantiating groups... [0.020s CPU, 0.023s wall-clock]
-Collecting mutex groups... [0.000s CPU, 0.002s wall-clock]
+Instantiating groups... [0.010s CPU, 0.018s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
 Choosing groups...
 0 uncovered facts
-Choosing groups: [0.040s CPU, 0.038s wall-clock]
-Building translation key... [0.010s CPU, 0.003s wall-clock]
-Computing fact groups: [0.090s CPU, 0.083s wall-clock]
-Building STRIPS to SAS dictionary... [0.000s CPU, 0.002s wall-clock]
-Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Choosing groups: [0.030s CPU, 0.033s wall-clock]
+Building translation key... [0.000s CPU, 0.002s wall-clock]
+Computing fact groups: [0.080s CPU, 0.068s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
 Building mutex information...
 Building mutex information: [0.000s CPU, 0.001s wall-clock]
 Translating task...
 Processing axioms...
 Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
 Translator axioms removed by simplifying: 0
-Processing axioms: [0.020s CPU, 0.022s wall-clock]
-Translating task: [0.350s CPU, 0.351s wall-clock]
+Processing axioms: [0.020s CPU, 0.018s wall-clock]
+Translating task: [0.380s CPU, 0.376s wall-clock]
 0 effect conditions simplified
 0 implied preconditions added
 Detecting unreachable propositions...
 0 operators removed
 0 axioms removed
 84 propositions removed
-Detecting unreachable propositions: [0.230s CPU, 0.228s wall-clock]
+Detecting unreachable propositions: [0.190s CPU, 0.185s wall-clock]
 Reordering and filtering variables...
 74 of 84 variables necessary.
 0 of 84 mutex groups necessary.
 7890 of 11530 operators necessary.
 0 of 0 axiom rules necessary.
-Reordering and filtering variables: [0.030s CPU, 0.034s wall-clock]
+Reordering and filtering variables: [0.020s CPU, 0.026s wall-clock]
 Translator variables: 74
 Translator derived variables: 0
 Translator facts: 1645
@@ -67,8 +67,8 @@ Translator operators: 7890
 Translator axioms: 0
 Translator task size: 32324
 Translator peak memory: 65020 KB
-Writing output... [0.070s CPU, 0.066s wall-clock]
-Done! [1.330s CPU, 1.333s wall-clock]
+Writing output... [0.050s CPU, 0.050s wall-clock]
+Done! [1.360s CPU, 1.346s wall-clock]
 translate exit code: 0
 
 INFO     Running search (release).
@@ -76,298 +76,290 @@ INFO     search stdin: output.sas
 INFO     search time limit: None
 INFO     search memory limit: None
 INFO     search command line string: /home/nadso/thesis/downward/builds/release/bin/downward --search 'eager_greedy([logistics_heuristic()])' --internal-plan-file sas_plan < output.sas
-[t=0.000351s, 10892 KB] reading input...
-[t=0.043547s, 13076 KB] done reading input!
-[t=680.943959s, 13800 KB] Building successor generator...done!
-[t=680.964143s, 15392 KB] peak memory difference for successor generator creation: 1592 KB
-[t=680.964183s, 15392 KB] time for successor generation creation: 0.019656s
-[t=680.964306s, 15392 KB] Variables: 74
-[t=680.964347s, 15392 KB] FactPairs: 1645
-[t=680.964374s, 15392 KB] Bytes per state: 28
-[t=680.964446s, 15392 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
-[t=680.964713s, 15392 KB] New best heuristic value for logistics heuristic: 155
-[t=680.964743s, 15392 KB] g=0, 1 evaluated, 0 expanded
-[t=680.964774s, 15392 KB] Initial heuristic value for logistics heuristic: 155
-[t=680.964802s, 15392 KB] pruning method: none
-[t=680.965067s, 15392 KB] New best heuristic value for logistics heuristic: 154
-[t=680.965098s, 15392 KB] g=1, 3 evaluated, 1 expanded
-[t=680.967562s, 15392 KB] New best heuristic value for logistics heuristic: 153
-[t=680.967617s, 15392 KB] g=1, 29 evaluated, 1 expanded
-[t=680.981575s, 15392 KB] New best heuristic value for logistics heuristic: 152
-[t=680.981658s, 15392 KB] g=2, 192 evaluated, 2 expanded
-[t=680.983976s, 15392 KB] New best heuristic value for logistics heuristic: 151
-[t=680.984020s, 15392 KB] g=2, 219 evaluated, 2 expanded
-[t=680.997382s, 15392 KB] New best heuristic value for logistics heuristic: 150
-[t=680.997466s, 15392 KB] g=3, 372 evaluated, 3 expanded
-[t=681.002126s, 15392 KB] New best heuristic value for logistics heuristic: 149
-[t=681.002168s, 15392 KB] g=3, 425 evaluated, 3 expanded
-[t=681.013033s, 15392 KB] New best heuristic value for logistics heuristic: 148
-[t=681.013083s, 15392 KB] g=4, 549 evaluated, 4 expanded
-[t=681.020287s, 15392 KB] New best heuristic value for logistics heuristic: 147
-[t=681.020348s, 15392 KB] g=4, 634 evaluated, 4 expanded
-[t=681.027920s, 15392 KB] New best heuristic value for logistics heuristic: 146
-[t=681.027967s, 15392 KB] g=5, 723 evaluated, 5 expanded
-[t=681.035111s, 15392 KB] New best heuristic value for logistics heuristic: 145
-[t=681.035153s, 15392 KB] g=5, 808 evaluated, 5 expanded
-[t=681.042627s, 15392 KB] New best heuristic value for logistics heuristic: 144
-[t=681.042671s, 15392 KB] g=6, 896 evaluated, 6 expanded
-[t=681.050717s, 15392 KB] New best heuristic value for logistics heuristic: 143
-[t=681.050766s, 15392 KB] g=6, 991 evaluated, 6 expanded
-[t=681.057320s, 15392 KB] New best heuristic value for logistics heuristic: 142
-[t=681.057364s, 15392 KB] g=7, 1068 evaluated, 7 expanded
-[t=681.066147s, 15392 KB] New best heuristic value for logistics heuristic: 141
-[t=681.066194s, 15392 KB] g=7, 1172 evaluated, 7 expanded
-[t=681.071654s, 15392 KB] New best heuristic value for logistics heuristic: 140
-[t=681.071696s, 15392 KB] g=8, 1236 evaluated, 8 expanded
-[t=681.081271s, 15392 KB] New best heuristic value for logistics heuristic: 139
-[t=681.081318s, 15392 KB] g=8, 1350 evaluated, 8 expanded
-[t=681.085831s, 15392 KB] New best heuristic value for logistics heuristic: 138
-[t=681.085872s, 15392 KB] g=9, 1403 evaluated, 9 expanded
-[t=681.095535s, 15392 KB] New best heuristic value for logistics heuristic: 137
-[t=681.095603s, 15392 KB] g=9, 1516 evaluated, 9 expanded
-[t=681.100064s, 15392 KB] New best heuristic value for logistics heuristic: 136
-[t=681.100112s, 15392 KB] g=10, 1567 evaluated, 10 expanded
-[t=681.113598s, 15392 KB] New best heuristic value for logistics heuristic: 135
-[t=681.113673s, 15392 KB] g=11, 1727 evaluated, 11 expanded
-[t=681.127441s, 15392 KB] New best heuristic value for logistics heuristic: 134
-[t=681.127512s, 15392 KB] g=12, 1885 evaluated, 12 expanded
-[t=681.147569s, 15392 KB] New best heuristic value for logistics heuristic: 133
-[t=681.147660s, 15392 KB] g=13, 2047 evaluated, 13 expanded
-[t=681.170607s, 15392 KB] New best heuristic value for logistics heuristic: 132
-[t=681.170687s, 15392 KB] g=14, 2206 evaluated, 14 expanded
-[t=681.193694s, 15392 KB] New best heuristic value for logistics heuristic: 131
-[t=681.193824s, 15392 KB] g=15, 2363 evaluated, 15 expanded
-[t=681.217446s, 15392 KB] New best heuristic value for logistics heuristic: 130
-[t=681.217597s, 15392 KB] g=16, 2522 evaluated, 16 expanded
-[t=681.238529s, 15392 KB] New best heuristic value for logistics heuristic: 129
-[t=681.238593s, 15392 KB] g=17, 2682 evaluated, 17 expanded
-[t=681.252969s, 15392 KB] New best heuristic value for logistics heuristic: 128
-[t=681.253018s, 15392 KB] g=18, 2841 evaluated, 18 expanded
-[t=681.266473s, 15392 KB] New best heuristic value for logistics heuristic: 127
-[t=681.266523s, 15392 KB] g=19, 3000 evaluated, 19 expanded
-[t=681.279756s, 15392 KB] New best heuristic value for logistics heuristic: 126
-[t=681.279797s, 15392 KB] g=20, 3160 evaluated, 20 expanded
-[t=681.285462s, 15392 KB] New best heuristic value for logistics heuristic: 125
-[t=681.285501s, 15392 KB] g=20, 3230 evaluated, 20 expanded
-[t=681.292739s, 15392 KB] New best heuristic value for logistics heuristic: 124
-[t=681.292793s, 15392 KB] g=21, 3321 evaluated, 21 expanded
-[t=681.297581s, 15392 KB] New best heuristic value for logistics heuristic: 123
-[t=681.297621s, 15392 KB] g=21, 3380 evaluated, 21 expanded
-[t=681.305486s, 15392 KB] New best heuristic value for logistics heuristic: 122
-[t=681.305548s, 15392 KB] g=22, 3480 evaluated, 22 expanded
-[t=681.310247s, 15392 KB] New best heuristic value for logistics heuristic: 118
-[t=681.310289s, 15392 KB] g=22, 3539 evaluated, 22 expanded
-[t=681.317601s, 15392 KB] New best heuristic value for logistics heuristic: 117
-[t=681.317642s, 15392 KB] g=23, 3631 evaluated, 23 expanded
-[t=681.323114s, 15392 KB] New best heuristic value for logistics heuristic: 116
-[t=681.323160s, 15392 KB] g=23, 3701 evaluated, 23 expanded
-[t=681.330068s, 15392 KB] New best heuristic value for logistics heuristic: 115
-[t=681.330110s, 15392 KB] g=24, 3784 evaluated, 24 expanded
-[t=681.342583s, 15392 KB] New best heuristic value for logistics heuristic: 114
-[t=681.342624s, 15392 KB] g=25, 3946 evaluated, 25 expanded
-[t=681.354887s, 15392 KB] New best heuristic value for logistics heuristic: 113
-[t=681.354932s, 15392 KB] g=26, 4108 evaluated, 26 expanded
-[t=681.367939s, 15392 KB] New best heuristic value for logistics heuristic: 112
-[t=681.367985s, 15392 KB] g=27, 4279 evaluated, 27 expanded
-[t=681.380281s, 15392 KB] New best heuristic value for logistics heuristic: 111
-[t=681.380322s, 15392 KB] g=28, 4442 evaluated, 28 expanded
-[t=681.393147s, 15392 KB] New best heuristic value for logistics heuristic: 110
-[t=681.393197s, 15392 KB] g=29, 4607 evaluated, 29 expanded
-[t=681.405962s, 15392 KB] New best heuristic value for logistics heuristic: 109
-[t=681.406046s, 15392 KB] g=30, 4772 evaluated, 30 expanded
-[t=681.419247s, 15392 KB] New best heuristic value for logistics heuristic: 108
-[t=681.419296s, 15392 KB] g=31, 4938 evaluated, 31 expanded
-[t=681.432728s, 15392 KB] New best heuristic value for logistics heuristic: 107
-[t=681.432776s, 15392 KB] g=32, 5108 evaluated, 32 expanded
-[t=681.445889s, 15392 KB] New best heuristic value for logistics heuristic: 106
-[t=681.445939s, 15392 KB] g=33, 5274 evaluated, 33 expanded
-[t=681.459537s, 15392 KB] New best heuristic value for logistics heuristic: 104
-[t=681.459616s, 15392 KB] g=34, 5440 evaluated, 34 expanded
-[t=681.474070s, 15392 KB] New best heuristic value for logistics heuristic: 103
-[t=681.474134s, 15392 KB] g=35, 5619 evaluated, 35 expanded
-[t=681.487832s, 15392 KB] New best heuristic value for logistics heuristic: 102
-[t=681.487881s, 15392 KB] g=36, 5792 evaluated, 36 expanded
-[t=681.502070s, 15392 KB] New best heuristic value for logistics heuristic: 101
-[t=681.502114s, 15392 KB] g=37, 5972 evaluated, 37 expanded
-[t=681.506785s, 15392 KB] New best heuristic value for logistics heuristic: 100
-[t=681.506822s, 15392 KB] g=37, 6031 evaluated, 37 expanded
-[t=681.516682s, 15392 KB] New best heuristic value for logistics heuristic: 99
-[t=681.516753s, 15392 KB] g=38, 6148 evaluated, 38 expanded
-[t=681.532262s, 15392 KB] New best heuristic value for logistics heuristic: 98
-[t=681.532355s, 15392 KB] g=39, 6321 evaluated, 39 expanded
-[t=681.559005s, 15392 KB] New best heuristic value for logistics heuristic: 97
-[t=681.559095s, 15392 KB] g=40, 6518 evaluated, 40 expanded
-[t=681.584390s, 15392 KB] New best heuristic value for logistics heuristic: 96
-[t=681.584473s, 15392 KB] g=41, 6693 evaluated, 41 expanded
-[t=681.613183s, 15392 KB] New best heuristic value for logistics heuristic: 95
-[t=681.613264s, 15392 KB] g=42, 6892 evaluated, 42 expanded
-[t=681.636037s, 15436 KB] New best heuristic value for logistics heuristic: 93
-[t=681.636127s, 15436 KB] g=43, 7069 evaluated, 43 expanded
-[t=681.636249s, 15436 KB] New best heuristic value for logistics heuristic: 90
-[t=681.636283s, 15436 KB] g=43, 7070 evaluated, 43 expanded
-[t=681.650844s, 15436 KB] New best heuristic value for logistics heuristic: 89
-[t=681.650898s, 15436 KB] g=44, 7241 evaluated, 44 expanded
-[t=681.651672s, 15436 KB] New best heuristic value for logistics heuristic: 88
-[t=681.651709s, 15436 KB] g=44, 7250 evaluated, 44 expanded
-[t=681.664977s, 15436 KB] New best heuristic value for logistics heuristic: 87
-[t=681.665021s, 15436 KB] g=45, 7418 evaluated, 45 expanded
-[t=681.680315s, 15580 KB] New best heuristic value for logistics heuristic: 82
-[t=681.680366s, 15580 KB] g=46, 7594 evaluated, 46 expanded
-[t=681.693738s, 15580 KB] New best heuristic value for logistics heuristic: 81
-[t=681.693778s, 15580 KB] g=47, 7765 evaluated, 47 expanded
-[t=681.706824s, 15580 KB] New best heuristic value for logistics heuristic: 76
-[t=681.706864s, 15580 KB] g=48, 7937 evaluated, 48 expanded
-[t=681.720420s, 15580 KB] New best heuristic value for logistics heuristic: 75
-[t=681.720459s, 15580 KB] g=49, 8117 evaluated, 49 expanded
-[t=681.734075s, 15580 KB] New best heuristic value for logistics heuristic: 70
-[t=681.734129s, 15580 KB] g=50, 8292 evaluated, 50 expanded
-[t=681.748558s, 15580 KB] New best heuristic value for logistics heuristic: 69
-[t=681.748682s, 15580 KB] g=51, 8474 evaluated, 51 expanded
-[t=681.763189s, 15580 KB] New best heuristic value for logistics heuristic: 64
-[t=681.763267s, 15580 KB] g=52, 8651 evaluated, 52 expanded
-[t=681.778215s, 15580 KB] New best heuristic value for logistics heuristic: 63
-[t=681.778343s, 15580 KB] g=53, 8834 evaluated, 53 expanded
-[t=681.794979s, 15580 KB] New best heuristic value for logistics heuristic: 62
-[t=681.795247s, 15580 KB] g=54, 9016 evaluated, 54 expanded
-[t=681.802182s, 15580 KB] New best heuristic value for logistics heuristic: 61
-[t=681.802309s, 15580 KB] g=55, 9073 evaluated, 55 expanded
-[t=681.828447s, 15580 KB] New best heuristic value for logistics heuristic: 60
-[t=681.828787s, 15580 KB] g=56, 9259 evaluated, 56 expanded
-[t=681.856027s, 15580 KB] New best heuristic value for logistics heuristic: 59
-[t=681.856365s, 15580 KB] g=57, 9445 evaluated, 57 expanded
-[t=681.882574s, 15580 KB] New best heuristic value for logistics heuristic: 58
-[t=681.882704s, 15580 KB] g=58, 9630 evaluated, 58 expanded
-[t=681.916962s, 15580 KB] New best heuristic value for logistics heuristic: 57
-[t=681.917104s, 15580 KB] g=59, 9937 evaluated, 59 expanded
-[t=681.931986s, 15580 KB] New best heuristic value for logistics heuristic: 55
-[t=681.932092s, 15580 KB] g=60, 10111 evaluated, 60 expanded
-[t=681.947572s, 15580 KB] New best heuristic value for logistics heuristic: 53
-[t=681.947718s, 15580 KB] g=61, 10293 evaluated, 61 expanded
-[t=681.953130s, 15580 KB] New best heuristic value for logistics heuristic: 52
-[t=681.953279s, 15580 KB] g=62, 10355 evaluated, 62 expanded
-[t=681.963770s, 15580 KB] New best heuristic value for logistics heuristic: 51
-[t=681.963866s, 15580 KB] g=62, 10476 evaluated, 62 expanded
-[t=681.969425s, 15580 KB] New best heuristic value for logistics heuristic: 50
-[t=681.969569s, 15580 KB] g=63, 10537 evaluated, 63 expanded
-[t=681.985505s, 15580 KB] New best heuristic value for logistics heuristic: 49
-[t=681.985644s, 15580 KB] g=64, 10716 evaluated, 64 expanded
-[t=682.001545s, 15712 KB] New best heuristic value for logistics heuristic: 48
-[t=682.001703s, 15712 KB] g=65, 10894 evaluated, 65 expanded
-[t=682.026703s, 15712 KB] New best heuristic value for logistics heuristic: 47
-[t=682.026876s, 15712 KB] g=66, 11188 evaluated, 66 expanded
-[t=682.041586s, 15712 KB] New best heuristic value for logistics heuristic: 46
-[t=682.041708s, 15712 KB] g=67, 11360 evaluated, 67 expanded
-[t=682.041993s, 15712 KB] New best heuristic value for logistics heuristic: 45
-[t=682.042022s, 15712 KB] g=67, 11363 evaluated, 67 expanded
-[t=682.048032s, 15712 KB] New best heuristic value for logistics heuristic: 44
-[t=682.048150s, 15712 KB] g=68, 11433 evaluated, 68 expanded
-[t=682.064263s, 15712 KB] New best heuristic value for logistics heuristic: 43
-[t=682.064399s, 15712 KB] g=69, 11617 evaluated, 69 expanded
-[t=682.080294s, 15712 KB] New best heuristic value for logistics heuristic: 42
-[t=682.080385s, 15712 KB] g=70, 11800 evaluated, 70 expanded
-[t=682.104601s, 15712 KB] New best heuristic value for logistics heuristic: 41
-[t=682.104703s, 15712 KB] g=71, 12089 evaluated, 71 expanded
-[t=682.119316s, 15712 KB] New best heuristic value for logistics heuristic: 36
-[t=682.119461s, 15712 KB] g=72, 12262 evaluated, 72 expanded
-[t=682.138561s, 15712 KB] New best heuristic value for logistics heuristic: 35
-[t=682.138772s, 15712 KB] g=73, 12485 evaluated, 73 expanded
-[t=682.154523s, 15712 KB] New best heuristic value for logistics heuristic: 34
-[t=682.154646s, 15712 KB] g=74, 12661 evaluated, 74 expanded
-[t=682.169668s, 15712 KB] New best heuristic value for logistics heuristic: 33
-[t=682.169761s, 15712 KB] g=75, 12834 evaluated, 75 expanded
-[t=682.183586s, 15712 KB] New best heuristic value for logistics heuristic: 32
-[t=682.183687s, 15712 KB] g=76, 12998 evaluated, 76 expanded
-[t=682.197553s, 15712 KB] New best heuristic value for logistics heuristic: 31
-[t=682.197681s, 15712 KB] g=77, 13163 evaluated, 77 expanded
-[t=682.199651s, 15712 KB] New best heuristic value for logistics heuristic: 30
-[t=682.199730s, 15712 KB] g=78, 13185 evaluated, 78 expanded
-[t=682.203391s, 15712 KB] New best heuristic value for logistics heuristic: 29
-[t=682.203430s, 15712 KB] g=78, 13229 evaluated, 78 expanded
-[t=682.221839s, 15712 KB] New best heuristic value for logistics heuristic: 28
-[t=682.222089s, 15712 KB] g=79, 13399 evaluated, 79 expanded
-[t=682.246039s, 15844 KB] New best heuristic value for logistics heuristic: 27
-[t=682.246339s, 15844 KB] g=80, 13568 evaluated, 80 expanded
-[t=682.286677s, 15844 KB] New best heuristic value for logistics heuristic: 26
-[t=682.286902s, 15844 KB] g=81, 13847 evaluated, 81 expanded
-[t=682.290016s, 15844 KB] New best heuristic value for logistics heuristic: 25
-[t=682.290084s, 15844 KB] g=82, 13868 evaluated, 82 expanded
-[t=682.314774s, 15844 KB] New best heuristic value for logistics heuristic: 24
-[t=682.315044s, 15844 KB] g=83, 14041 evaluated, 83 expanded
-[t=682.339667s, 15844 KB] New best heuristic value for logistics heuristic: 23
-[t=682.339810s, 15844 KB] g=84, 14213 evaluated, 84 expanded
-[t=682.364363s, 15844 KB] New best heuristic value for logistics heuristic: 22
-[t=682.364510s, 15844 KB] g=85, 14385 evaluated, 85 expanded
-[t=682.401789s, 15844 KB] New best heuristic value for logistics heuristic: 21
-[t=682.401945s, 15844 KB] g=86, 14708 evaluated, 86 expanded
-[t=682.415963s, 15844 KB] New best heuristic value for logistics heuristic: 20
-[t=682.416061s, 15844 KB] g=87, 14879 evaluated, 87 expanded
-[t=682.430553s, 15844 KB] New best heuristic value for logistics heuristic: 19
-[t=682.430700s, 15844 KB] g=88, 15046 evaluated, 88 expanded
-[t=682.452439s, 15844 KB] New best heuristic value for logistics heuristic: 14
-[t=682.452639s, 15844 KB] g=89, 15219 evaluated, 89 expanded
-[t=682.482397s, 16104 KB] New best heuristic value for logistics heuristic: 13
-[t=682.482479s, 16104 KB] g=90, 15394 evaluated, 90 expanded
-[t=682.506515s, 16104 KB] New best heuristic value for logistics heuristic: 12
-[t=682.506597s, 16104 KB] g=91, 15567 evaluated, 91 expanded
-[t=682.529334s, 16104 KB] New best heuristic value for logistics heuristic: 11
-[t=682.529448s, 16104 KB] g=92, 15734 evaluated, 92 expanded
-[t=682.546036s, 16104 KB] New best heuristic value for logistics heuristic: 6
-[t=682.546093s, 16104 KB] g=93, 15911 evaluated, 93 expanded
-[t=682.560235s, 16104 KB] New best heuristic value for logistics heuristic: 5
-[t=682.560277s, 16104 KB] g=94, 16089 evaluated, 94 expanded
-[t=682.573637s, 16104 KB] New best heuristic value for logistics heuristic: 4
-[t=682.573682s, 16104 KB] g=95, 16260 evaluated, 95 expanded
-[t=682.574835s, 16104 KB] New best heuristic value for logistics heuristic: 3
-[t=682.574873s, 16104 KB] g=96, 16274 evaluated, 96 expanded
-[t=682.578313s, 16104 KB] New best heuristic value for logistics heuristic: 2
-[t=682.578351s, 16104 KB] g=96, 16319 evaluated, 96 expanded
-[t=682.591899s, 16104 KB] New best heuristic value for logistics heuristic: 1
-[t=682.591941s, 16104 KB] g=97, 16497 evaluated, 97 expanded
-[t=682.605505s, 16104 KB] New best heuristic value for logistics heuristic: 0
-[t=682.605545s, 16104 KB] g=98, 16675 evaluated, 98 expanded
-[t=682.614733s, 16104 KB] Solution found!
-[t=682.614859s, 16104 KB] Actual search time: 1.650061s
-load-truck package23 truck37 city1-1 (1)
-load-truck package27 truck32 city10-2 (1)
-load-truck package17 truck21 city4-2 (1)
+[t=0.000140s, 10888 KB] reading input...
+[t=0.033534s, 13072 KB] done reading input!
+[t=0.041338s, 14184 KB] Building successor generator...done!
+[t=0.045438s, 15108 KB] peak memory difference for successor generator creation: 924 KB
+[t=0.045470s, 15108 KB] time for successor generation creation: 0.003908s
+[t=0.045568s, 15108 KB] Variables: 74
+[t=0.045598s, 15108 KB] FactPairs: 1645
+[t=0.045622s, 15108 KB] Bytes per state: 28
+[t=0.045681s, 15108 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+[t=0.045759s, 15108 KB] New best heuristic value for logistics heuristic: 158
+[t=0.045787s, 15108 KB] g=0, 1 evaluated, 0 expanded
+[t=0.045814s, 15108 KB] Initial heuristic value for logistics heuristic: 158
+[t=0.045839s, 15108 KB] pruning method: none
+[t=0.046042s, 15108 KB] New best heuristic value for logistics heuristic: 156
+[t=0.046072s, 15108 KB] g=1, 9 evaluated, 1 expanded
+[t=0.046904s, 15108 KB] New best heuristic value for logistics heuristic: 155
+[t=0.046934s, 15108 KB] g=1, 60 evaluated, 1 expanded
+[t=0.049192s, 15108 KB] New best heuristic value for logistics heuristic: 153
+[t=0.049233s, 15108 KB] g=2, 192 evaluated, 2 expanded
+[t=0.052221s, 15108 KB] New best heuristic value for logistics heuristic: 152
+[t=0.052264s, 15108 KB] g=3, 374 evaluated, 3 expanded
+[t=0.052340s, 15108 KB] New best heuristic value for logistics heuristic: 151
+[t=0.052367s, 15108 KB] g=3, 377 evaluated, 3 expanded
+[t=0.055204s, 15108 KB] New best heuristic value for logistics heuristic: 150
+[t=0.055245s, 15108 KB] g=4, 553 evaluated, 4 expanded
+[t=0.055430s, 15108 KB] New best heuristic value for logistics heuristic: 149
+[t=0.055487s, 15108 KB] g=4, 563 evaluated, 4 expanded
+[t=0.058145s, 15108 KB] New best heuristic value for logistics heuristic: 148
+[t=0.058184s, 15108 KB] g=5, 729 evaluated, 5 expanded
+[t=0.059542s, 15108 KB] New best heuristic value for logistics heuristic: 147
+[t=0.059580s, 15108 KB] g=5, 814 evaluated, 5 expanded
+[t=0.061047s, 15108 KB] New best heuristic value for logistics heuristic: 146
+[t=0.061088s, 15108 KB] g=6, 904 evaluated, 6 expanded
+[t=0.062466s, 15108 KB] New best heuristic value for logistics heuristic: 145
+[t=0.062505s, 15108 KB] g=6, 990 evaluated, 6 expanded
+[t=0.064046s, 15108 KB] New best heuristic value for logistics heuristic: 144
+[t=0.064085s, 15108 KB] g=7, 1079 evaluated, 7 expanded
+[t=0.065636s, 15108 KB] New best heuristic value for logistics heuristic: 143
+[t=0.065674s, 15108 KB] g=7, 1176 evaluated, 7 expanded
+[t=0.066960s, 15108 KB] New best heuristic value for logistics heuristic: 142
+[t=0.066998s, 15108 KB] g=8, 1254 evaluated, 8 expanded
+[t=0.068699s, 15108 KB] New best heuristic value for logistics heuristic: 141
+[t=0.068736s, 15108 KB] g=8, 1361 evaluated, 8 expanded
+[t=0.069806s, 15108 KB] New best heuristic value for logistics heuristic: 140
+[t=0.069844s, 15108 KB] g=9, 1425 evaluated, 9 expanded
+[t=0.071805s, 15108 KB] New best heuristic value for logistics heuristic: 139
+[t=0.071846s, 15108 KB] g=9, 1542 evaluated, 9 expanded
+[t=0.072729s, 15108 KB] New best heuristic value for logistics heuristic: 138
+[t=0.072758s, 15108 KB] g=10, 1595 evaluated, 10 expanded
+[t=0.074680s, 15108 KB] New best heuristic value for logistics heuristic: 137
+[t=0.074734s, 15108 KB] g=10, 1711 evaluated, 10 expanded
+[t=0.075627s, 15108 KB] New best heuristic value for logistics heuristic: 136
+[t=0.075683s, 15108 KB] g=11, 1762 evaluated, 11 expanded
+[t=0.078298s, 15108 KB] New best heuristic value for logistics heuristic: 135
+[t=0.078337s, 15108 KB] g=12, 1926 evaluated, 12 expanded
+[t=0.081233s, 15108 KB] New best heuristic value for logistics heuristic: 134
+[t=0.081275s, 15108 KB] g=13, 2092 evaluated, 13 expanded
+[t=0.084005s, 15108 KB] New best heuristic value for logistics heuristic: 133
+[t=0.084044s, 15108 KB] g=14, 2258 evaluated, 14 expanded
+[t=0.086766s, 15108 KB] New best heuristic value for logistics heuristic: 132
+[t=0.086805s, 15108 KB] g=15, 2426 evaluated, 15 expanded
+[t=0.089576s, 15108 KB] New best heuristic value for logistics heuristic: 131
+[t=0.089615s, 15108 KB] g=16, 2595 evaluated, 16 expanded
+[t=0.092365s, 15108 KB] New best heuristic value for logistics heuristic: 130
+[t=0.092406s, 15108 KB] g=17, 2761 evaluated, 17 expanded
+[t=0.095155s, 15108 KB] New best heuristic value for logistics heuristic: 129
+[t=0.095194s, 15108 KB] g=18, 2929 evaluated, 18 expanded
+[t=0.097949s, 15108 KB] New best heuristic value for logistics heuristic: 128
+[t=0.097988s, 15108 KB] g=19, 3097 evaluated, 19 expanded
+[t=0.100815s, 15108 KB] New best heuristic value for logistics heuristic: 127
+[t=0.100875s, 15108 KB] g=20, 3265 evaluated, 20 expanded
+[t=0.103710s, 15108 KB] New best heuristic value for logistics heuristic: 126
+[t=0.103760s, 15108 KB] g=21, 3434 evaluated, 21 expanded
+[t=0.104948s, 15108 KB] New best heuristic value for logistics heuristic: 125
+[t=0.104986s, 15108 KB] g=21, 3506 evaluated, 21 expanded
+[t=0.106570s, 15108 KB] New best heuristic value for logistics heuristic: 124
+[t=0.106623s, 15108 KB] g=22, 3601 evaluated, 22 expanded
+[t=0.107658s, 15108 KB] New best heuristic value for logistics heuristic: 123
+[t=0.107696s, 15108 KB] g=22, 3663 evaluated, 22 expanded
+[t=0.109647s, 15108 KB] New best heuristic value for logistics heuristic: 122
+[t=0.109716s, 15108 KB] g=23, 3767 evaluated, 23 expanded
+[t=0.110882s, 15108 KB] New best heuristic value for logistics heuristic: 118
+[t=0.110930s, 15108 KB] g=23, 3829 evaluated, 23 expanded
+[t=0.113088s, 15108 KB] New best heuristic value for logistics heuristic: 117
+[t=0.113134s, 15108 KB] g=24, 3925 evaluated, 24 expanded
+[t=0.116796s, 15108 KB] New best heuristic value for logistics heuristic: 115
+[t=0.116851s, 15108 KB] g=25, 4094 evaluated, 25 expanded
+[t=0.120904s, 15108 KB] New best heuristic value for logistics heuristic: 114
+[t=0.120961s, 15108 KB] g=26, 4276 evaluated, 26 expanded
+[t=0.125289s, 15108 KB] New best heuristic value for logistics heuristic: 113
+[t=0.125354s, 15108 KB] g=27, 4451 evaluated, 27 expanded
+[t=0.129998s, 15108 KB] New best heuristic value for logistics heuristic: 112
+[t=0.130062s, 15108 KB] g=28, 4625 evaluated, 28 expanded
+[t=0.135929s, 15108 KB] New best heuristic value for logistics heuristic: 111
+[t=0.136002s, 15108 KB] g=29, 4833 evaluated, 29 expanded
+[t=0.137099s, 15108 KB] New best heuristic value for logistics heuristic: 110
+[t=0.137163s, 15108 KB] g=29, 4868 evaluated, 29 expanded
+[t=0.141280s, 15108 KB] New best heuristic value for logistics heuristic: 109
+[t=0.141365s, 15108 KB] g=30, 5010 evaluated, 30 expanded
+[t=0.146416s, 15108 KB] New best heuristic value for logistics heuristic: 108
+[t=0.146494s, 15108 KB] g=31, 5185 evaluated, 31 expanded
+[t=0.151554s, 15108 KB] New best heuristic value for logistics heuristic: 106
+[t=0.151625s, 15108 KB] g=32, 5358 evaluated, 32 expanded
+[t=0.156620s, 15108 KB] New best heuristic value for logistics heuristic: 105
+[t=0.156689s, 15108 KB] g=33, 5532 evaluated, 33 expanded
+[t=0.161820s, 15240 KB] New best heuristic value for logistics heuristic: 104
+[t=0.161903s, 15240 KB] g=34, 5709 evaluated, 34 expanded
+[t=0.167058s, 15240 KB] New best heuristic value for logistics heuristic: 103
+[t=0.167136s, 15240 KB] g=35, 5887 evaluated, 35 expanded
+[t=0.172301s, 15240 KB] New best heuristic value for logistics heuristic: 102
+[t=0.172373s, 15240 KB] g=36, 6063 evaluated, 36 expanded
+[t=0.177503s, 15240 KB] New best heuristic value for logistics heuristic: 101
+[t=0.177581s, 15240 KB] g=37, 6237 evaluated, 37 expanded
+[t=0.183753s, 15240 KB] New best heuristic value for logistics heuristic: 100
+[t=0.183838s, 15240 KB] g=38, 6446 evaluated, 38 expanded
+[t=0.186423s, 15240 KB] New best heuristic value for logistics heuristic: 98
+[t=0.186492s, 15240 KB] g=39, 6530 evaluated, 39 expanded
+[t=0.191588s, 15240 KB] New best heuristic value for logistics heuristic: 97
+[t=0.191688s, 15240 KB] g=40, 6707 evaluated, 40 expanded
+[t=0.196711s, 15240 KB] New best heuristic value for logistics heuristic: 96
+[t=0.196788s, 15240 KB] g=41, 6883 evaluated, 41 expanded
+[t=0.204323s, 15240 KB] New best heuristic value for logistics heuristic: 95
+[t=0.204420s, 15240 KB] g=42, 7142 evaluated, 42 expanded
+[t=0.209468s, 15240 KB] New best heuristic value for logistics heuristic: 93
+[t=0.209581s, 15240 KB] g=43, 7319 evaluated, 43 expanded
+[t=0.209677s, 15240 KB] New best heuristic value for logistics heuristic: 90
+[t=0.209723s, 15240 KB] g=43, 7320 evaluated, 43 expanded
+[t=0.214174s, 15240 KB] New best heuristic value for logistics heuristic: 89
+[t=0.214229s, 15240 KB] g=44, 7491 evaluated, 44 expanded
+[t=0.214456s, 15240 KB] New best heuristic value for logistics heuristic: 88
+[t=0.214492s, 15240 KB] g=44, 7500 evaluated, 44 expanded
+[t=0.218961s, 15372 KB] New best heuristic value for logistics heuristic: 87
+[t=0.219020s, 15372 KB] g=45, 7668 evaluated, 45 expanded
+[t=0.222656s, 15372 KB] New best heuristic value for logistics heuristic: 82
+[t=0.222701s, 15372 KB] g=46, 7844 evaluated, 46 expanded
+[t=0.225794s, 15372 KB] New best heuristic value for logistics heuristic: 81
+[t=0.225852s, 15372 KB] g=47, 8015 evaluated, 47 expanded
+[t=0.228875s, 15372 KB] New best heuristic value for logistics heuristic: 76
+[t=0.228918s, 15372 KB] g=48, 8187 evaluated, 48 expanded
+[t=0.231925s, 15372 KB] New best heuristic value for logistics heuristic: 75
+[t=0.231965s, 15372 KB] g=49, 8367 evaluated, 49 expanded
+[t=0.234716s, 15372 KB] New best heuristic value for logistics heuristic: 70
+[t=0.234755s, 15372 KB] g=50, 8542 evaluated, 50 expanded
+[t=0.237543s, 15372 KB] New best heuristic value for logistics heuristic: 69
+[t=0.237583s, 15372 KB] g=51, 8724 evaluated, 51 expanded
+[t=0.240321s, 15372 KB] New best heuristic value for logistics heuristic: 64
+[t=0.240369s, 15372 KB] g=52, 8901 evaluated, 52 expanded
+[t=0.243144s, 15372 KB] New best heuristic value for logistics heuristic: 63
+[t=0.243188s, 15372 KB] g=53, 9084 evaluated, 53 expanded
+[t=0.245974s, 15372 KB] New best heuristic value for logistics heuristic: 62
+[t=0.246019s, 15372 KB] g=54, 9266 evaluated, 54 expanded
+[t=0.246934s, 15372 KB] New best heuristic value for logistics heuristic: 61
+[t=0.246967s, 15372 KB] g=55, 9323 evaluated, 55 expanded
+[t=0.249757s, 15372 KB] New best heuristic value for logistics heuristic: 60
+[t=0.249824s, 15372 KB] g=56, 9509 evaluated, 56 expanded
+[t=0.252646s, 15372 KB] New best heuristic value for logistics heuristic: 59
+[t=0.252701s, 15372 KB] g=57, 9695 evaluated, 57 expanded
+[t=0.255504s, 15372 KB] New best heuristic value for logistics heuristic: 58
+[t=0.255548s, 15372 KB] g=58, 9880 evaluated, 58 expanded
+[t=0.260311s, 15508 KB] New best heuristic value for logistics heuristic: 57
+[t=0.260398s, 15508 KB] g=59, 10187 evaluated, 59 expanded
+[t=0.263138s, 15508 KB] New best heuristic value for logistics heuristic: 55
+[t=0.263180s, 15508 KB] g=60, 10361 evaluated, 60 expanded
+[t=0.266027s, 15508 KB] New best heuristic value for logistics heuristic: 53
+[t=0.266072s, 15508 KB] g=61, 10543 evaluated, 61 expanded
+[t=0.267101s, 15508 KB] New best heuristic value for logistics heuristic: 52
+[t=0.267141s, 15508 KB] g=62, 10605 evaluated, 62 expanded
+[t=0.269055s, 15508 KB] New best heuristic value for logistics heuristic: 51
+[t=0.269111s, 15508 KB] g=62, 10726 evaluated, 62 expanded
+[t=0.270184s, 15508 KB] New best heuristic value for logistics heuristic: 50
+[t=0.270235s, 15508 KB] g=63, 10787 evaluated, 63 expanded
+[t=0.273204s, 15508 KB] New best heuristic value for logistics heuristic: 49
+[t=0.273278s, 15508 KB] g=64, 10966 evaluated, 64 expanded
+[t=0.276386s, 15508 KB] New best heuristic value for logistics heuristic: 48
+[t=0.276464s, 15508 KB] g=65, 11144 evaluated, 65 expanded
+[t=0.281271s, 15508 KB] New best heuristic value for logistics heuristic: 47
+[t=0.281332s, 15508 KB] g=66, 11438 evaluated, 66 expanded
+[t=0.284253s, 15508 KB] New best heuristic value for logistics heuristic: 46
+[t=0.284307s, 15508 KB] g=67, 11610 evaluated, 67 expanded
+[t=0.284386s, 15508 KB] New best heuristic value for logistics heuristic: 45
+[t=0.284415s, 15508 KB] g=67, 11613 evaluated, 67 expanded
+[t=0.285585s, 15508 KB] New best heuristic value for logistics heuristic: 44
+[t=0.285624s, 15508 KB] g=68, 11683 evaluated, 68 expanded
+[t=0.288817s, 15508 KB] New best heuristic value for logistics heuristic: 43
+[t=0.288894s, 15508 KB] g=69, 11867 evaluated, 69 expanded
+[t=0.291871s, 15508 KB] New best heuristic value for logistics heuristic: 42
+[t=0.291921s, 15508 KB] g=70, 12050 evaluated, 70 expanded
+[t=0.296620s, 15508 KB] New best heuristic value for logistics heuristic: 41
+[t=0.296672s, 15508 KB] g=71, 12339 evaluated, 71 expanded
+[t=0.299467s, 15508 KB] New best heuristic value for logistics heuristic: 36
+[t=0.299509s, 15508 KB] g=72, 12512 evaluated, 72 expanded
+[t=0.303199s, 15508 KB] New best heuristic value for logistics heuristic: 35
+[t=0.303301s, 15508 KB] g=73, 12735 evaluated, 73 expanded
+[t=0.306272s, 15636 KB] New best heuristic value for logistics heuristic: 34
+[t=0.306347s, 15636 KB] g=74, 12911 evaluated, 74 expanded
+[t=0.309165s, 15636 KB] New best heuristic value for logistics heuristic: 33
+[t=0.309212s, 15636 KB] g=75, 13084 evaluated, 75 expanded
+[t=0.311933s, 15636 KB] New best heuristic value for logistics heuristic: 32
+[t=0.311988s, 15636 KB] g=76, 13248 evaluated, 76 expanded
+[t=0.314654s, 15636 KB] New best heuristic value for logistics heuristic: 30
+[t=0.314702s, 15636 KB] g=77, 13413 evaluated, 77 expanded
+[t=0.315804s, 15636 KB] New best heuristic value for logistics heuristic: 29
+[t=0.315852s, 15636 KB] g=78, 13479 evaluated, 78 expanded
+[t=0.317516s, 15636 KB] New best heuristic value for logistics heuristic: 28
+[t=0.317557s, 15636 KB] g=78, 13585 evaluated, 78 expanded
+[t=0.318678s, 15636 KB] New best heuristic value for logistics heuristic: 27
+[t=0.318719s, 15636 KB] g=79, 13650 evaluated, 79 expanded
+[t=0.321597s, 15636 KB] New best heuristic value for logistics heuristic: 26
+[t=0.321671s, 15636 KB] g=80, 13822 evaluated, 80 expanded
+[t=0.324386s, 15636 KB] New best heuristic value for logistics heuristic: 24
+[t=0.324440s, 15636 KB] g=81, 13991 evaluated, 81 expanded
+[t=0.327211s, 15636 KB] New best heuristic value for logistics heuristic: 23
+[t=0.327275s, 15636 KB] g=82, 14159 evaluated, 82 expanded
+[t=0.331246s, 15888 KB] New best heuristic value for logistics heuristic: 22
+[t=0.331314s, 15888 KB] g=83, 14333 evaluated, 83 expanded
+[t=0.335616s, 15888 KB] New best heuristic value for logistics heuristic: 21
+[t=0.335667s, 15888 KB] g=84, 14609 evaluated, 84 expanded
+[t=0.338529s, 15888 KB] New best heuristic value for logistics heuristic: 20
+[t=0.338597s, 15888 KB] g=85, 14780 evaluated, 85 expanded
+[t=0.341362s, 15888 KB] New best heuristic value for logistics heuristic: 19
+[t=0.341418s, 15888 KB] g=86, 14947 evaluated, 86 expanded
+[t=0.344229s, 15888 KB] New best heuristic value for logistics heuristic: 14
+[t=0.344275s, 15888 KB] g=87, 15120 evaluated, 87 expanded
+[t=0.347016s, 15888 KB] New best heuristic value for logistics heuristic: 13
+[t=0.347066s, 15888 KB] g=88, 15295 evaluated, 88 expanded
+[t=0.349842s, 15888 KB] New best heuristic value for logistics heuristic: 12
+[t=0.349892s, 15888 KB] g=89, 15468 evaluated, 89 expanded
+[t=0.352594s, 15888 KB] New best heuristic value for logistics heuristic: 11
+[t=0.352684s, 15888 KB] g=90, 15635 evaluated, 90 expanded
+[t=0.355508s, 15888 KB] New best heuristic value for logistics heuristic: 6
+[t=0.355565s, 15888 KB] g=91, 15812 evaluated, 91 expanded
+[t=0.358368s, 15892 KB] New best heuristic value for logistics heuristic: 5
+[t=0.358429s, 15892 KB] g=92, 15990 evaluated, 92 expanded
+[t=0.361119s, 15892 KB] New best heuristic value for logistics heuristic: 3
+[t=0.361171s, 15892 KB] g=93, 16161 evaluated, 93 expanded
+[t=0.362091s, 15892 KB] New best heuristic value for logistics heuristic: 2
+[t=0.362120s, 15892 KB] g=94, 16220 evaluated, 94 expanded
+[t=0.364893s, 15892 KB] New best heuristic value for logistics heuristic: 1
+[t=0.364943s, 15892 KB] g=95, 16398 evaluated, 95 expanded
+[t=0.367766s, 15892 KB] New best heuristic value for logistics heuristic: 0
+[t=0.367819s, 15892 KB] g=96, 16576 evaluated, 96 expanded
+[t=0.369693s, 15892 KB] Solution found!
+[t=0.369767s, 15892 KB] Actual search time: 0.323927s
+drive-truck truck22 city9-2 city9-1 city9 (1)
+load-truck package13 truck5 city7-1 (1)
+load-truck package29 truck46 city10-1 (1)
+load-truck package26 truck42 city6-1 (1)
 load-airplane package21 plane8 city9-2 (1)
 load-airplane package12 plane8 city9-2 (1)
 load-airplane package28 plane7 city4-2 (1)
 load-airplane package15 plane6 city1-2 (1)
 load-airplane package18 plane5 city2-2 (1)
 load-airplane package16 plane5 city2-2 (1)
-load-truck package13 truck5 city7-1 (1)
 drive-truck truck5 city7-1 city7-2 city7 (1)
 unload-truck package13 truck5 city7-2 (1)
-load-truck package29 truck46 city10-1 (1)
 drive-truck truck46 city10-1 city10-2 city10 (1)
 unload-truck package29 truck46 city10-2 (1)
+load-truck package27 truck46 city10-2 (1)
+drive-truck truck46 city10-2 city10-1 city10 (1)
+unload-truck package27 truck46 city10-1 (1)
 load-truck package22 truck45 city9-1 (1)
-load-truck package19 truck45 city9-1 (1)
 drive-truck truck45 city9-1 city9-2 city9 (1)
 unload-truck package22 truck45 city9-2 (1)
 load-airplane package22 plane8 city9-2 (1)
 fly-airplane plane8 city9-2 city1-2 (1)
 unload-airplane package22 plane8 city1-2 (1)
+drive-truck truck42 city6-1 city6-2 city6 (1)
+unload-truck package26 truck42 city6-2 (1)
+load-truck package23 truck37 city1-1 (1)
+drive-truck truck37 city1-1 city1-2 city1 (1)
+unload-truck package23 truck37 city1-2 (1)
+load-airplane package23 plane8 city1-2 (1)
+load-truck package19 truck22 city9-1 (1)
+load-truck package14 truck22 city9-1 (1)
+drive-truck truck22 city9-1 city9-2 city9 (1)
+unload-truck package19 truck22 city9-2 (1)
+unload-truck package14 truck22 city9-2 (1)
+load-truck package17 truck21 city4-2 (1)
+drive-truck truck21 city4-2 city4-1 city4 (1)
+unload-truck package17 truck21 city4-1 (1)
 unload-airplane package21 plane8 city1-2 (1)
 load-truck package21 truck8 city1-2 (1)
 drive-truck truck8 city1-2 city1-1 city1 (1)
 unload-truck package21 truck8 city1-1 (1)
-unload-truck package19 truck45 city9-2 (1)
-drive-truck truck45 city9-2 city9-1 city9 (1)
-load-truck package14 truck45 city9-1 (1)
-drive-truck truck45 city9-1 city9-2 city9 (1)
-unload-truck package14 truck45 city9-2 (1)
-load-truck package26 truck42 city6-1 (1)
-drive-truck truck42 city6-1 city6-2 city6 (1)
-unload-truck package26 truck42 city6-2 (1)
-drive-truck truck37 city1-1 city1-2 city1 (1)
-unload-truck package23 truck37 city1-2 (1)
-load-airplane package23 plane8 city1-2 (1)
-drive-truck truck32 city10-2 city10-1 city10 (1)
-unload-truck package27 truck32 city10-1 (1)
-drive-truck truck21 city4-2 city4-1 city4 (1)
-unload-truck package17 truck21 city4-1 (1)
 fly-airplane plane8 city1-2 city10-2 (1)
 unload-airplane package23 plane8 city10-2 (1)
 load-airplane package29 plane8 city10-2 (1)
@@ -404,14 +396,12 @@ load-airplane package25 plane1 city6-2 (1)
 load-airplane package20 plane1 city6-2 (1)
 fly-airplane plane1 city6-2 city4-2 (1)
 unload-airplane package25 plane1 city4-2 (1)
+unload-airplane package20 plane1 city4-2 (1)
 load-truck package25 truck18 city4-2 (1)
+load-truck package20 truck18 city4-2 (1)
 drive-truck truck18 city4-2 city4-1 city4 (1)
 unload-truck package25 truck18 city4-1 (1)
-unload-airplane package20 plane1 city4-2 (1)
-drive-truck truck40 city4-1 city4-2 city4 (1)
-load-truck package20 truck40 city4-2 (1)
-drive-truck truck40 city4-2 city4-1 city4 (1)
-unload-truck package20 truck40 city4-1 (1)
+unload-truck package20 truck18 city4-1 (1)
 fly-airplane plane1 city4-2 city6-2 (1)
 load-airplane package11 plane1 city6-2 (1)
 fly-airplane plane1 city6-2 city2-2 (1)
@@ -425,22 +415,22 @@ unload-airplane package26 plane1 city9-2 (1)
 load-truck package26 truck22 city9-2 (1)
 drive-truck truck22 city9-2 city9-1 city9 (1)
 unload-truck package26 truck22 city9-1 (1)
-[t=682.614899s, 16104 KB] Plan length: 98 step(s).
-[t=682.614899s, 16104 KB] Plan cost: 98
-[t=682.614899s, 16104 KB] Expanded 99 state(s).
-[t=682.614899s, 16104 KB] Reopened 0 state(s).
-[t=682.614899s, 16104 KB] Evaluated 16796 state(s).
-[t=682.614899s, 16104 KB] Evaluations: 16796
-[t=682.614899s, 16104 KB] Generated 17072 state(s).
-[t=682.614899s, 16104 KB] Dead ends: 0 state(s).
-[t=682.614899s, 16104 KB] Number of registered states: 16796
-[t=682.614899s, 16104 KB] Int hash set load factor: 16796/32768 = 0.512573
-[t=682.614899s, 16104 KB] Int hash set resizes: 15
-[t=682.614899s, 16104 KB] Search time: 1.650455s
-[t=682.614899s, 16104 KB] Total time: 682.614899s
+[t=0.369798s, 15892 KB] Plan length: 96 step(s).
+[t=0.369798s, 15892 KB] Plan cost: 96
+[t=0.369798s, 15892 KB] Expanded 97 state(s).
+[t=0.369798s, 15892 KB] Reopened 0 state(s).
+[t=0.369798s, 15892 KB] Evaluated 16697 state(s).
+[t=0.369798s, 15892 KB] Evaluations: 16697
+[t=0.369798s, 15892 KB] Generated 16975 state(s).
+[t=0.369798s, 15892 KB] Dead ends: 0 state(s).
+[t=0.369798s, 15892 KB] Number of registered states: 16697
+[t=0.369798s, 15892 KB] Int hash set load factor: 16697/32768 = 0.509552
+[t=0.369798s, 15892 KB] Int hash set resizes: 15
+[t=0.369798s, 15892 KB] Search time: 0.324119s
+[t=0.369798s, 15892 KB] Total time: 0.369798s
 Solution found.
-Peak memory: 16104 KB
+Peak memory: 15892 KB
 Remove intermediate file output.sas
 search exit code: 0
 
-INFO     Planner time: 684.24s
+INFO     Planner time: 2.00s
