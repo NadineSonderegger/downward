@@ -1,0 +1,18 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/blocksworld/domain.pddl downward-benchmarks/blocksworld/domain.pddl --sas-file output.sas
+Parsing...
+Parsing task
+	->Parsing problem name
+Invalid problem name definition
+Syntax: (problem NAME)
+Got: ['domain', 'blocks']
+translate exit code: 31
+
+Driver aborting after translate
+INFO     Planner time: 0.44s

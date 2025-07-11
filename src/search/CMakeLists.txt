@@ -961,9 +961,11 @@ create_fast_downward_library(
 		potentials/spanner_heuristic
         potentials/potential_function_features
         potentials/potential_heuristic_infinity
-        potentials/potential_heuristics_pdda
+        potentials/potential_heuristic_pdda
         potentials/logistics_heuristic
         potentials/termes_heuristic
+        potentials/blocksworld_infinity_heuristic
+        potentials/blocksworld_pdda_heuristic
     DEPENDS
         lp_solver
         sampling

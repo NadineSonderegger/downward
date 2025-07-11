@@ -1,6 +1,6 @@
-#include "potential_heuristic.h"
+#include "potential_heuristic_pdda.h"
 
-#include "potential_function.h"
+#include "potential_function_features.h"
 
 #include "../plugins/plugin.h"
 #include <limits>
@@ -8,7 +8,7 @@
 using namespace std;
 
 namespace potentials {
-PotentialHeuristicPDDA::PotentialHeuristic(
+PotentialHeuristicPDDA::PotentialHeuristicPDDA(
     unique_ptr<PotentialFunctionFeatures> function1,
     unique_ptr<PotentialFunctionFeatures> function2,
     const shared_ptr<AbstractTask> &transform, bool cache_estimates,
@@ -19,7 +19,7 @@ PotentialHeuristicPDDA::PotentialHeuristic(
 }
 
 
-int PotentialHeuristic::compute_heuristic(const State &ancestor_state) {
+int PotentialHeuristicPDDA::compute_heuristic(const State &ancestor_state) {
     State state = convert_ancestor_state(ancestor_state);
     if (function2->get_value(state) <= 0)
     {

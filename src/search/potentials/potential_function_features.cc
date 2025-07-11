@@ -55,13 +55,16 @@ int PotentialFunctionFeatures::get_value(const State &state) const {
             cout << " with weight " << feature.second << endl;
             cout << "  is in state" << endl; 
             */
+            if(heuristic_value + feature.second > numeric_limits<int>::max()){
+                cout << "too large" << endl;
+            }
             heuristic_value += feature.second;
         }
         else{
             // cout << "  is not in state" << endl;
         }
     }
-    cout << heuristic_value << endl;
+    //cout << heuristic_value << endl;
     return heuristic_value;
 }
 }

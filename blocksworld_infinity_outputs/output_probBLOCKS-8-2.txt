@@ -1,0 +1,150 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/blocksworld/domain.pddl downward-benchmarks/blocksworld/probBLOCKS-8-2.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.000s wall-clock]
+Generated 19 rules.
+Computing model... [0.010s CPU, 0.007s wall-clock]
+737 relevant atoms
+240 auxiliary atoms
+977 final queue length
+2190 total queue pushes
+Completing instantiation... [0.000s CPU, 0.015s wall-clock]
+Instantiating: [0.010s CPU, 0.023s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.001s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+8 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.002s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.020s CPU, 0.001s wall-clock]
+Translating task: [0.040s CPU, 0.026s wall-clock]
+512 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+8 propositions removed
+Detecting unreachable propositions: [0.020s CPU, 0.015s wall-clock]
+Reordering and filtering variables...
+16 of 16 variables necessary.
+0 of 8 mutex groups necessary.
+576 of 576 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.006s wall-clock]
+Translator variables: 16
+Translator derived variables: 0
+Translator facts: 88
+Translator goal facts: 7
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 576
+Translator axioms: 0
+Translator task size: 3823
+Translator peak memory: 33116 KB
+Writing output... [0.010s CPU, 0.009s wall-clock]
+Done! [0.080s CPU, 0.086s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/nadso/thesis/downward/builds/release/bin/downward --search 'eager_greedy([blocksworld_infinity_heuristic()])' --internal-plan-file sas_plan < output.sas
+[t=0.000268s, 11008 KB] reading input...
+[t=0.005582s, 11132 KB] done reading input!
+d7
+a6
+f5
+g4
+e3
+h8
+b2
+c1
+[t=0.026349s, 11860 KB] Building successor generator...done!
+[t=0.027464s, 11860 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.027513s, 11860 KB] time for successor generation creation: 0.000468s
+[t=0.027563s, 11860 KB] Variables: 16
+[t=0.027610s, 11860 KB] FactPairs: 88
+[t=0.027650s, 11860 KB] Bytes per state: 8
+[t=0.027717s, 11860 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+[t=0.027813s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 10
+[t=0.027859s, 11860 KB] g=0, 1 evaluated, 0 expanded
+[t=0.027904s, 11860 KB] Initial heuristic value for blocksworld infinity dda heuristic: 10
+[t=0.027945s, 11860 KB] pruning method: none
+[t=0.028263s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 9
+[t=0.028369s, 11860 KB] g=1, 25 evaluated, 1 expanded
+[t=0.028695s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 8
+[t=0.028764s, 11860 KB] g=2, 50 evaluated, 2 expanded
+[t=0.029158s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 7
+[t=0.029226s, 11860 KB] g=3, 101 evaluated, 3 expanded
+[t=0.030323s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 6
+[t=0.030606s, 11860 KB] g=4, 148 evaluated, 4 expanded
+[t=0.030998s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 5
+[t=0.031073s, 11860 KB] g=5, 162 evaluated, 5 expanded
+[t=0.031618s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 4
+[t=0.031724s, 11860 KB] g=6, 202 evaluated, 6 expanded
+[t=0.032133s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 3
+[t=0.032204s, 11860 KB] g=7, 247 evaluated, 7 expanded
+[t=0.032399s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 2
+[t=0.032445s, 11860 KB] g=8, 259 evaluated, 8 expanded
+[t=0.032544s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 1
+[t=0.032590s, 11860 KB] g=9, 263 evaluated, 9 expanded
+[t=0.032678s, 11860 KB] New best heuristic value for blocksworld infinity dda heuristic: 0
+[t=0.032723s, 11860 KB] g=10, 267 evaluated, 10 expanded
+[t=0.032773s, 11860 KB] Solution found!
+[t=0.032818s, 11860 KB] Actual search time: 0.004802s
+move-onto-table d b (1)
+move-onto-table b f (1)
+move-onto-table f g (1)
+move-from-table-onto-block d h (1)
+move-from-table-onto-block a d (1)
+move-from-table-onto-block f a (1)
+move-from-table-onto-block g f (1)
+move-from-table-onto-block e g (1)
+move-from-table-onto-block b e (1)
+move-from-table-onto-block c b (1)
+[t=0.032864s, 11860 KB] Plan length: 10 step(s).
+[t=0.032864s, 11860 KB] Plan cost: 10
+[t=0.032864s, 11860 KB] Expanded 11 state(s).
+[t=0.032864s, 11860 KB] Reopened 0 state(s).
+[t=0.032864s, 11860 KB] Evaluated 268 state(s).
+[t=0.032864s, 11860 KB] Evaluations: 268
+[t=0.032864s, 11860 KB] Generated 322 state(s).
+[t=0.032864s, 11860 KB] Dead ends: 233 state(s).
+[t=0.032864s, 11860 KB] Number of registered states: 268
+[t=0.032864s, 11860 KB] Int hash set load factor: 268/512 = 0.523438
+[t=0.032864s, 11860 KB] Int hash set resizes: 9
+[t=0.032864s, 11860 KB] Search time: 0.005149s
+[t=0.032864s, 11860 KB] Total time: 0.032864s
+Solution found.
+Peak memory: 11860 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 0.44s

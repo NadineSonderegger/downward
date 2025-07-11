@@ -37,18 +37,20 @@ SearchStatus AllStates::step() {
     std::vector<int> current(variables.size());
     bool stop_flag = false;
 
+    State initial_state = task_proxy.get_initial_state();
+    EvaluationContext eval_context_current(initial_state, 0, false, &statistics);
+    int h_current = eval_context_current.get_evaluator_value_or_infinity(h_evaluator.get());
+    if(h_current == numeric_limits<int>::max()){
+        return FAILED;
+    }
+
     generate_states(0, variable_list, current, [&](const std::vector<int> &state) -> bool {
 
         State s = task_proxy.create_state(std::vector<int>(state));
 
-        std::cout << "State: ";
-        for (int val : state)
-            std::cout << val << " ";
-        std::cout << "\n"; 
-
         EvaluationContext eval_context_current(s, 0, false, &statistics);
         int h_current = eval_context_current.get_evaluator_value_or_infinity(h_evaluator.get());
-        // cout << "heuristic value current :" << h_current << endl;
+        //cout << "heuristic value current :" << h_current << endl;
 
         if (is_goal_state(s,goal))
         {
@@ -69,15 +71,36 @@ SearchStatus AllStates::step() {
     
             State succ_state = s.get_unregistered_successor(op);
 
+            /* cout << "Successor State: ";
+            for (FactProxy fact : succ_state){
+                int val = fact.get_value();
+                cout << val << " ";
+            }
+            cout << "\n"; */ 
+
             EvaluationContext eval_context_succ(succ_state, 0, false, &statistics);
             int h_succ = eval_context_succ.get_evaluator_value_or_infinity(h_evaluator.get());
-            // cout << "heuristic value succ:" << h_succ << endl;
+            //cout << "heuristic value succ:" << h_succ << endl;
             if(h_succ < h_current){
-                std::cout << "Found improving successor: " << h_succ << " < " << h_current << std::endl;
+
+                /*cout << "State: ";
+                for (int val : state){
+                    cout << val << " ";
+                }
+                cout << "\n";  */
+                //cout << "Found improving successor: " << h_succ << " < " << h_current << std::endl;
                 return true;
             }
         }
-        // cout << "Found no improving successor: "  << endl;
+
+        cout << "Found no improving successor: "  << endl;
+        cout << "State: ";
+        for (int val : state){
+            cout << val << " ";
+        }
+        cout << "\n"; 
+        cout << "heuristic value current :" << h_current << endl;
+
         stop_flag = true;
         return false;  
         

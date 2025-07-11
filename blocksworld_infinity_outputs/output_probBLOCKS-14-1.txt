@@ -1,0 +1,192 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 /home/nadso/thesis/downward/builds/release/bin/translate/translate.py downward-benchmarks/blocksworld/domain.pddl downward-benchmarks/blocksworld/probBLOCKS-14-1.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 19 rules.
+Computing model... [0.040s CPU, 0.039s wall-clock]
+3389 relevant atoms
+672 auxiliary atoms
+4061 final queue length
+10128 total queue pushes
+Completing instantiation... [0.140s CPU, 0.136s wall-clock]
+Instantiating: [0.180s CPU, 0.179s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.002s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+14 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.004s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [0.010s CPU, 0.008s wall-clock]
+Translating task: [0.160s CPU, 0.162s wall-clock]
+2744 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+14 propositions removed
+Detecting unreachable propositions: [0.120s CPU, 0.115s wall-clock]
+Reordering and filtering variables...
+28 of 28 variables necessary.
+0 of 14 mutex groups necessary.
+2940 of 2940 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.060s CPU, 0.058s wall-clock]
+Translator variables: 28
+Translator derived variables: 0
+Translator facts: 238
+Translator goal facts: 13
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 2940
+Translator axioms: 0
+Translator task size: 19879
+Translator peak memory: 42784 KB
+Writing output... [0.080s CPU, 0.088s wall-clock]
+Done! [0.620s CPU, 0.629s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/nadso/thesis/downward/builds/release/bin/downward --search 'eager_greedy([blocksworld_infinity_heuristic()])' --internal-plan-file sas_plan < output.sas
+[t=0.000262s, 11008 KB] reading input...
+[t=0.030710s, 11936 KB] done reading input!
+c14
+g8
+l12
+a9
+b3
+h4
+m5
+f7
+i10
+j1
+e11
+d2
+k6
+n13
+[t=0.402246s, 18196 KB] Building successor generator...done!
+[t=0.407938s, 18196 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.407988s, 18196 KB] time for successor generation creation: 0.001694s
+[t=0.408067s, 18196 KB] Variables: 28
+[t=0.408110s, 18196 KB] FactPairs: 238
+[t=0.408145s, 18196 KB] Bytes per state: 12
+[t=0.408208s, 18196 KB] Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+[t=0.408595s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 23
+[t=0.408657s, 18196 KB] g=0, 1 evaluated, 0 expanded
+[t=0.408699s, 18196 KB] Initial heuristic value for blocksworld infinity dda heuristic: 23
+[t=0.408736s, 18196 KB] pruning method: none
+[t=0.409107s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 21
+[t=0.409168s, 18196 KB] g=1, 7 evaluated, 1 expanded
+[t=0.410513s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 20
+[t=0.410589s, 18196 KB] g=2, 49 evaluated, 2 expanded
+[t=0.411714s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 19
+[t=0.411778s, 18196 KB] g=3, 93 evaluated, 3 expanded
+[t=0.413337s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 18
+[t=0.413474s, 18196 KB] g=4, 139 evaluated, 4 expanded
+[t=0.415046s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 17
+[t=0.415196s, 18196 KB] g=5, 188 evaluated, 5 expanded
+[t=0.419785s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 16
+[t=0.419912s, 18196 KB] g=6, 316 evaluated, 6 expanded
+[t=0.421253s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 15
+[t=0.421308s, 18196 KB] g=7, 376 evaluated, 7 expanded
+[t=0.424951s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 14
+[t=0.425006s, 18196 KB] g=8, 567 evaluated, 8 expanded
+[t=0.429877s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 13
+[t=0.429973s, 18196 KB] g=9, 728 evaluated, 9 expanded
+[t=0.442090s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 12
+[t=0.442195s, 18196 KB] g=10, 910 evaluated, 10 expanded
+[t=0.446441s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 11
+[t=0.446546s, 18196 KB] g=11, 1063 evaluated, 11 expanded
+[t=0.448691s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 10
+[t=0.448790s, 18196 KB] g=12, 1139 evaluated, 12 expanded
+[t=0.451135s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 9
+[t=0.451184s, 18196 KB] g=13, 1256 evaluated, 13 expanded
+[t=0.452699s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 8
+[t=0.452792s, 18196 KB] g=14, 1319 evaluated, 14 expanded
+[t=0.454640s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 7
+[t=0.454695s, 18196 KB] g=15, 1402 evaluated, 15 expanded
+[t=0.457007s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 6
+[t=0.457060s, 18196 KB] g=16, 1497 evaluated, 16 expanded
+[t=0.458707s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 5
+[t=0.458767s, 18196 KB] g=17, 1551 evaluated, 17 expanded
+[t=0.460268s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 4
+[t=0.460327s, 18196 KB] g=18, 1597 evaluated, 18 expanded
+[t=0.461142s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 3
+[t=0.461187s, 18196 KB] g=19, 1615 evaluated, 19 expanded
+[t=0.461582s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 2
+[t=0.461627s, 18196 KB] g=20, 1621 evaluated, 20 expanded
+[t=0.462077s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 1
+[t=0.462134s, 18196 KB] g=21, 1631 evaluated, 21 expanded
+[t=0.462595s, 18196 KB] New best heuristic value for blocksworld infinity dda heuristic: 0
+[t=0.462704s, 18196 KB] g=22, 1637 evaluated, 22 expanded
+[t=0.462761s, 18196 KB] Solution found!
+[t=0.462799s, 18196 KB] Actual search time: 0.054054s
+move-onto-table c e (1)
+move-onto-table g j (1)
+move-onto-table h f (1)
+move-onto-table f a (1)
+move-onto-table a k (1)
+move-onto-table i d (1)
+move-onto-table d l (1)
+move-onto-table k b (1)
+move-onto-table l m (1)
+move-from-table-onto-block n c (1)
+move-from-table-onto-block l n (1)
+move-from-table-onto-block e l (1)
+move-from-table-onto-block i e (1)
+move-from-table-onto-block a i (1)
+move-from-table-onto-block g a (1)
+move-from-table-onto-block f g (1)
+move-from-table-onto-block k f (1)
+move-from-table-onto-block m k (1)
+move-from-table-onto-block h m (1)
+move-from-table-onto-block b h (1)
+move-from-table-onto-block d b (1)
+move-from-table-onto-block j d (1)
+[t=0.462835s, 18196 KB] Plan length: 22 step(s).
+[t=0.462835s, 18196 KB] Plan cost: 22
+[t=0.462835s, 18196 KB] Expanded 23 state(s).
+[t=0.462835s, 18196 KB] Reopened 0 state(s).
+[t=0.462835s, 18196 KB] Evaluated 1638 state(s).
+[t=0.462835s, 18196 KB] Evaluations: 1638
+[t=0.462835s, 18196 KB] Generated 1835 state(s).
+[t=0.462835s, 18196 KB] Dead ends: 1495 state(s).
+[t=0.462835s, 18196 KB] Number of registered states: 1638
+[t=0.462835s, 18196 KB] Int hash set load factor: 1638/2048 = 0.799805
+[t=0.462835s, 18196 KB] Int hash set resizes: 11
+[t=0.462835s, 18196 KB] Search time: 0.054628s
+[t=0.462835s, 18196 KB] Total time: 0.462835s
+Solution found.
+Peak memory: 18196 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 1.67s
